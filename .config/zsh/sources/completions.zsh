@@ -1,3 +1,8 @@
+zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
+  atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+  atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
+zinit light trapd00r/LS_COLORS
+
 autoload -U colors
 
 colors
@@ -24,8 +29,7 @@ zstyle ':completion:*' accept-exact '*(N)'
 # divide man pages by sections
 zstyle ':completion:*:manuals' separate-sections true
 
-zstyle ':completion:*' list-colors "${LS_COLORS}"
-# zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*:default' menu select=1
 
 zinit ice as"completion"
 zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
