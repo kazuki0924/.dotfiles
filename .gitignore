@@ -1,0 +1,4 @@
+.DS_Store
+.gitsecret/keys/random_seed
+!*.secret
+.aws/hideme

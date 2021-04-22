@@ -59,3 +59,18 @@ alias bbcl="brew bundle cleanup --file=~/.Brewfile"
 
 # Uninstall all installed Homebrew formula not in this Brewfile:
 alias bbc="brew bundle cleanup --force --file=~/.Brewfile"
+
+# Python
+alias pip="pip3"
+alias python="python3"
+
+# trash-cli
+alias rm='echo "This is not the command you are looking for."; false'
+alias t="trash-put -v --trash-dir=$HOME/.Trash"
+alias te="trash-empty --trash-dir=$HOME/.Trash"
+alias tls="trash-list --trash-dir=$HOME/.Trash"
+alias trestore="trash-restore --trash-dir=$HOME/.Trash"
+alias trm="trash-rm --trash-dir=$HOME/.Trash"
+
+# git-secret
+alias gs="git-secret"
