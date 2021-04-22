@@ -6,7 +6,7 @@ DOTFILES_BACKUP_DIR=".dotfiles_backup_$(date +"%Y_%m_%d")"
 # list of directories to not be included in files for creating symbolic links
 NOT_DOTDIRS=(
   .git
-  install
+  scripts
 )
 
 # create .dotfiles_backup in homedir
