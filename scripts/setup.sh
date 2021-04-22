@@ -12,6 +12,8 @@ NOT_DOTDIRS=(
 
 # list of files to not be included in files for creating symbolic links
 NOT_DOTFILES=(
+  .DS_Store
+  README.md
   Makefile
   .gitignore
 )
@@ -19,7 +21,10 @@ NOT_DOTFILES=(
 # create .dotfiles_backup in homedir
 (
   cd
-  mkdir -p $DOTFILES_BACKUP_DIR
+  mkdir -pv $DOTFILES_BACKUP_DIR
+  mkdir -pv .config/alacritty
+  mkdir -pv .config/zsh/sources
+  mkdir -pv .aws
 )
 
 to_dir_patterns() {

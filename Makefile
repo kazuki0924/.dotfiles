@@ -1,3 +1,7 @@
+.PHONY: setup install
+
+all: setup install
+
 setup:
 	./scripts/setup.sh
 
