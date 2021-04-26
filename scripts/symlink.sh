@@ -22,12 +22,18 @@ NOT_DOTFILES=(
 (
   cd
   mkdir -pv $DOTFILES_BACKUP_DIR
-  mkdir -pv .config/alacritty
-  mkdir -pv .config/zsh/sources
-  mkdir -pv .aws
 )
 
 to_dir_patterns() {
+  local s
+  for v in "$@"; do
+    s+="./$v|"
+  done
+  s=${s%?}
+  echo $s
+}
+
+to_dir_patterns_for_files() {
   local s
   for v in "$@"; do
     s+="./$v/|"
@@ -46,25 +52,35 @@ to_file_patterns() {
 }
 
 dp=$(to_dir_patterns "${NOT_DOTDIRS[@]}")
+dpf=$(to_dir_patterns_for_files "${NOT_DOTDIRS[@]}")
 fp=$(to_file_patterns "${NOT_DOTFILES[@]}")
-p="$dp|$fp"
+p="$dpf|$fp"
 
 cd $DOTFILES_DIR
+
+dirs=$(find . -type d | egrep -v "^($dp)")
 files=$(find . -type f | egrep -v "$p")
 
-# for debugging
-# for file in $files; do
-#   echo "$file"
-# done
+# mkdir for creating symbolic links
+(
+  cd
+  for dir in $dirs; do
+    [[ "$dir" == "." ]] && continue
+    echo creating directory $dir...
+    mkdir -p $dir
+  done
+)
 
 # backup files and create symbolic links
 (
   cd
   for file in $files; do
     if [ -f $file ]; then
-      mv -v $file $DOTFILES_BACKUP_DIR
+      echo moving existing files to backup...
+      mv $file $DOTFILES_BACKUP_DIR
     fi
     dotfile=$HOME/.dotfiles/${file:2}
+    echo creating symlink...
     ln -sfnv $dotfile $file
   done
 )
