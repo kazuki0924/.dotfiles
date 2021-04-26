@@ -4,3 +4,6 @@ source ~/.config/zsh/zinit.zsh
 for file in ~/.config/zsh/sources/*.zsh; do
   source $file
 done
+unset file
+
+source ~/.config/zsh/plugins.zsh

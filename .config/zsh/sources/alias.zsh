@@ -20,16 +20,13 @@ alias grs="git reset --soft HEAD~1"
 alias s="source ~/.zshrc"
 
 # vsc
-alias vs="code-insiders ."
-alias vsr="cd && code-insiders ."
-alias vsz="cd && code-insiders .zshrc"
-alias vszc="cd ~/.config && code-insiders ."
+alias vsc="code-insiders ."
+alias vsch="cd && code-insiders ."
+alias vscd="cd && code-insiders ~/.dotfiles"
 
 # misc
 alias air='$(go env GOPATH)/bin/air'
 alias medis="cd /Applications/medis && npm start"
-alias ssh="pbcopy < ~/.ssh/id_rsa.pub"
-alias dokku="ssh root@157.245.240.4"
 
 # tmux
 alias tks="tmux kill-server"
@@ -38,39 +35,45 @@ alias tn="tmux new-session -d && tmux switch-client -n"
 
 # exa
 # general use
-# alias ls='exa'                                                          # ls
-# alias l='exa -lbF --git'                                                # list, size, type, git
-# alias ll='exa -lbGF --git'                                             # long list
-# alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
-# alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
-# alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
+alias e='exa'                                                          # ls
+alias el='exa -lbF --git'                                                # list, size, type, git
+alias ell='exa -lbGF --git'                                             # long list
+alias ellm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
+alias ela='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
+alias ex='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
 
 # specialty views
-# alias lS='exa -1'                                                              # one column, just names
-# alias lt='exa --tree --level=2'                                         # tree
+alias elS='exa -1'                                                              # one column, just names
+alias elt='exa --tree --level=2'                                         # tree
 
-# Homebrew
+# homebrew
+# install these homebrew formula globally:
+alias bb="brew bundle --no-lock"
+# list all installed homebrew formula not in this brewfile:
+alias bbcl="brew bundle cleanup"
+# uninstall all installed homebrew formula not in this brewfile:
+alias bbc="brew bundle cleanup --force"
 
-# Install these Homebrew formula globally:
-alias bb="brew bundle --no-lock --file=~/.Brewfile"
-
-# List all installed Homebrew formula not in this Brewfile:
-alias bbcl="brew bundle cleanup --file=~/.Brewfile"
-
-# Uninstall all installed Homebrew formula not in this Brewfile:
-alias bbc="brew bundle cleanup --force --file=~/.Brewfile"
-
-# Python
+# python
 alias pip="pip3"
 alias python="python3"
 
 # trash-cli
 alias rm='echo "This is not the command you are looking for."; false'
-alias t="trash-put -v --trash-dir=$HOME/.Trash"
-alias te="trash-empty --trash-dir=$HOME/.Trash"
-alias tls="trash-list --trash-dir=$HOME/.Trash"
-alias trestore="trash-restore --trash-dir=$HOME/.Trash"
-alias trm="trash-rm --trash-dir=$HOME/.Trash"
+alias t="trash-put -v"
+alias te="trash-empty"
+alias tls="trash-list"
+alias trestore="trash-restore"
+alias trm="trash-rm"
 
 # git-secret
 alias gs="git-secret"
+
+# nnn
+alias n="nnn -deH"
+
+# cd
+alias cdsource="cd ~/.dotfiles/.config/zsh/sources/"
+
+# edit
+alias valias="vim ~/.dotfiles/.config/zsh/sources/alias.zsh"

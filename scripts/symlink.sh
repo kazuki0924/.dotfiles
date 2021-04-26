@@ -63,8 +63,8 @@ files=$(find . -type f | egrep -v "$p")
   for file in $files; do
     if [ -f $file ]; then
       mv -v $file $DOTFILES_BACKUP_DIR
-      dotfile=$HOME/.dotfiles/${file:2}
-      ln -sfnv $dotfile $file
     fi
+    dotfile=$HOME/.dotfiles/${file:2}
+    ln -sfnv $dotfile $file
   done
 )
