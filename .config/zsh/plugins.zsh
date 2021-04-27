@@ -28,14 +28,16 @@ zinit wait"1" lucid for \
   zdharma/history-search-multi-word \
   atinit"__zsh-history-substring-search_config" \
   zsh-users/zsh-history-substring-search \
-  supercrabtree/k 
+  supercrabtree/k
 
 __zinit_last_completion_related_plugin() {
-  ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay
+  ZINIT[COMPINIT_OPTS]=-C
+  zicompinit
+  zicdreplay
 }
 
 # fast-syntax-highlighting
-# zsh-completions 
+# zsh-completions
 # zsh-autosuggestions
 zinit wait"1.5" lucid for \
   atinit"__zinit_last_completion_related_plugin" \

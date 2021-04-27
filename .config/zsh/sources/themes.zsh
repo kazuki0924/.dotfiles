@@ -10,4 +10,3 @@ zinit light trapd00r/LS_COLORS
 
 autoload -U colors
 colors
-
