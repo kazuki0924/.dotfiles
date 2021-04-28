@@ -72,12 +72,6 @@ alias gs="git-secret"
 # nnn
 alias n="nnn -deH"
 
-# cd
-alias cdsource="cd ~/.dotfiles/.config/zsh/sources/"
-
-# edit
-alias valias="vim ~/.dotfiles/.config/zsh/sources/alias.zsh"
-
 # zsh-diff-so-fancy
 alias gdsf="git dsf"
 
