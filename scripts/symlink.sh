@@ -8,6 +8,7 @@ NOT_DOTDIRS=(
   .git
   .gitsecret
   scripts
+  assets
 )
 
 # list of files to not be included in files for creating symbolic links

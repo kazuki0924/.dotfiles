@@ -4,10 +4,13 @@ SHELL=/bin/bash
 
 all: setup install
 
-setup: symlink mac 
+setup: symlink fonts mac 
 
 symlink:
 	./scripts/symlink.sh
+
+fonts:
+	./scripts/fonts.sh
 
 mac:
 	./scripts/mac.sh
