@@ -6,3 +6,11 @@ function gacp {
   gc "$COMMENT"
   gpush
 }
+
+function avim {
+  nohup alacritty -t "Alacritty - vim" -e $SHELL -lc "nvim $(pwd)/$1" >/dev/null & 
+}
+
+function atn {
+  nohup alacritty -t "test" -e $SHELL -lc "tmux new-session" >/dev/null & 
+}

@@ -80,3 +80,14 @@ alias valias="vim ~/.dotfiles/.config/zsh/sources/alias.zsh"
 
 # zsh-diff-so-fancy
 alias gdsf="git dsf"
+
+# macOS
+alias on="open -n -a"
+alias ons="open -n -a Slack"
+
+# neovim
+alias v="nvim"
+alias vim="nvim"
+
+# dotfiles
+alias sym="cd ~/.dotfiles && make symlink"

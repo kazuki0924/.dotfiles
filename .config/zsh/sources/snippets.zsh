@@ -5,3 +5,5 @@ zinit wait lucid for \
   OMZP::aws
 
 zinit snippet OMZP::last-working-dir
+
+fpath+="${HOME}/alacritty/extra/completions" 
