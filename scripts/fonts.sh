@@ -1,3 +1,3 @@
 #!/bin/bash
 
-mv $HOME/.dotfiles/assets/Fonts/* $HOME/Library/Fonts
+cp $HOME/.dotfiles/assets/Fonts/* $HOME/Library/Fonts
