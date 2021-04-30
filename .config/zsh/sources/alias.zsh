@@ -85,3 +85,15 @@ alias vim="nvim"
 
 # dotfiles
 alias sym="cd ~/.dotfiles && make symlink"
+
+# open in nvim
+alias v_alias="cd ~/.dotfiles/.config/zsh/sources && nvim alias.zsh"
+alias v_cheatsheet="cd ~/Repositories/my-cheat-sheet-2021 && nvim README.md"
+alias v_init="cd ~/.dotfiles/.config/nvim && nvim init.vim"
+
+# terminal
+# clear screen buffer
+alias clear="clear && printf '\e[3J'"
+
+# tmuxinator
+alias mux_d="tmuxinator start dotfiles"
