@@ -1,6 +1,6 @@
 SHELL=/bin/bash
 
-.PHONY: setup symlink mac install homebrew nnn_plugins
+.PHONY: setup symlink fonts mac install homebrew npm_install_g curl
 
 all: setup install
 
@@ -15,10 +15,13 @@ fonts:
 mac:
 	./scripts/mac.sh
 
-install: homebrew nnn_plugins 
+install: homebrew npm_install_g curl 
 
 homebrew:
 	./scripts/homebrew.sh
 
-nnn_plugins:
-	curl -sL https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | bash
+npm_install_g :
+	./scripts/npm_install_g.sh
+
+curl:
+	./scripts/curl.sh

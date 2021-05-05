@@ -1,6 +1,10 @@
 #!/bin/bash
-
-DOTFILES_DIR="$HOME/.dotfiles"
+DOT_DIRNAME=".dotfiles"
+if [ ! -z "$1" ]
+  then
+    DOT_DIRNAME=$1
+fi
+DOTFILES_DIR="$HOME/$DOT_DIRNAME"
 DOTFILES_BACKUP_DIR=".dotfiles_backup_$(date +"%Y_%m_%d")"
 
 # list of directories to not be included in files for creating symbolic links
@@ -68,7 +72,7 @@ files=$(find . -type f | egrep -v "$p")
   for dir in $dirs; do
     [[ "$dir" == "." ]] && continue
     echo creating directory $dir...
-    mkdir -p $dir
+    mkdir -p "$dir"
   done
 )
 
@@ -80,8 +84,8 @@ files=$(find . -type f | egrep -v "$p")
       echo moving existing files to backup...
       mv $file $DOTFILES_BACKUP_DIR
     fi
-    dotfile=$HOME/.dotfiles/${file:2}
+    dotfile=$HOME/$DOT_DIRNAME/${file:2}
     echo creating symlink...
-    ln -sfnv $dotfile $file
+    ln -sfnv "$dotfile" "$file"
   done
 )

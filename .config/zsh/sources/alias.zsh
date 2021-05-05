@@ -1,3 +1,6 @@
+# basic
+alias s="source ~/.zshrc"
+
 # yarn
 alias y="yarn"
 alias yi="yarn init"
@@ -17,7 +20,6 @@ alias gpush="git push origin HEAD"
 alias gpull="git pull origin master"
 alias gf="git fetch origin"
 alias grs="git reset --soft HEAD~1"
-alias s="source ~/.zshrc"
 
 # vsc
 alias vsc="code-insiders ."
@@ -32,6 +34,8 @@ alias medis="cd /Applications/medis && npm start"
 alias tks="tmux kill-server"
 alias tka="tmux neww && tmux killw -a && tmux killp -a"
 alias tn="tmux new-session -d && tmux switch-client -n"
+alias tkl="tmux kill-pane -t $(tmux list-panes | wc -l) && source ~/.zshrc"
+alias tp3="tmux splitw && tmux splitw -h && tmux resizep -t 0 -y $(expr $(tmux display -p '#{window_height}') / 3)"
 
 # exa
 # general use
@@ -70,7 +74,9 @@ alias trm="trash-rm"
 alias gs="git-secret"
 
 # nnn
-alias n="nnn -deH"
+alias n="nnn"
+alias np="nnn -P p"
+alias nn='tmux split-window -h -d "nnn -$NNN_OPTS" && nnn'
 
 # zsh-diff-so-fancy
 alias gdsf="git dsf"
@@ -86,14 +92,16 @@ alias vim="nvim"
 # dotfiles
 alias sym="cd ~/.dotfiles && make symlink"
 
-# open in nvim
-alias v_alias="cd ~/.dotfiles/.config/zsh/sources && nvim alias.zsh"
-alias v_cheatsheet="cd ~/Repositories/my-cheat-sheet-2021 && nvim README.md"
-alias v_init="cd ~/.dotfiles/.config/nvim && nvim init.vim"
-
 # terminal
 # clear screen buffer
 alias clear="clear && printf '\e[3J'"
 
 # tmuxinator
-alias mux_d="tmuxinator start dotfiles"
+alias muxd="tmuxinator start dotfiles"
+
+# fzy
+alias ffv="find . -type f | fzy | xargs nvim"
+alias fdv="find ~/.dotfiles -type f | fzy | xargs nvim"
+
+# gls
+alias gls='gls --color="auto"'

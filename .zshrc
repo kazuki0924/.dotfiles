@@ -7,3 +7,4 @@ done
 unset file
 
 source ~/.config/zsh/plugins.zsh
+source ~/.config/zsh/eval.zsh

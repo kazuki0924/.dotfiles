@@ -8,14 +8,13 @@ DIRS=(
   Repositories
   Screenshots
   Miscellaneous
-  Documents/Work
-  Documents/Personal
+  Documents/{Personal,Work}
 )
 
 (
   cd
   for dir in "${DIRS[@]}"; do
-    [ ! -d $HOME/$dir ] && mkdir -pv $HOME/$dir
+    [ ! -d "$HOME/$dir" ] && mkdir -pv "$HOME/$dir"
     echo created $dir directory
   done
 )

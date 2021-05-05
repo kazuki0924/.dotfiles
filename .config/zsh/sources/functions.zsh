@@ -7,10 +7,22 @@ function gacp {
   gpush
 }
 
-function avim {
+function av {
   nohup alacritty -t "Alacritty - vim" -e $SHELL -lc "nvim $(pwd)/$1" >/dev/null & 
 }
 
 function atn {
   nohup alacritty -t "test" -e $SHELL -lc "tmux new-session" >/dev/null & 
+}
+
+function tsv {
+  tmux split-window -h
+}
+
+function tsV {
+  tmux split-window -v
+}
+
+function mdtv {
+  mkdir -p "$(dirname "$1")" && touch "$1" && nvim "$1"
 }
