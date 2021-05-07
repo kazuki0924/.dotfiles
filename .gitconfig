@@ -1,6 +1,17 @@
 [init]
-  defaultBranch = main
-[color]
-  ui = auto
+    defaultBranch = main
 [core]
-  excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
+    pager = delta
+[include]
+    path = ~/.gitconfig.user
+[pull]
+    rebase = false
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    syntax-theme = gruvbox-dark
+    ; plus-style = "syntax #012800"
+    ; minus-style = "syntax #340001"
+    navigate = true
+    line-numbers = true

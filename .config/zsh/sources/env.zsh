@@ -2,7 +2,6 @@
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export VISUAL="nvim"
 export EDITOR="nvim"
-# export PAGER="less -RF"
 export PAGER="less -R"
 export TERM="alacritty"
 export TERMINAL="alacritty"
@@ -36,3 +35,4 @@ export SPLIT="v"
 
 # bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export BAT_PAGER="less -RFX"
