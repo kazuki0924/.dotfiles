@@ -2,6 +2,8 @@
 " let &packpath=&runtimepath
 " source ~/.vimrc
 
+set spell spelllang=en_us
+
 syntax on
 set smartindent
 set smartcase
@@ -83,6 +85,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 " Plug 'mhinz/vim-startify'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
@@ -125,24 +129,6 @@ nnoremap <silent> <Leader>ff <cmd>Telescope find_files find_command=rg,--files<C
 nnoremap <silent> <Leader>fw :DashboardFindWord<CR>
 nnoremap <silent> <Leader>fh :DashboardFindHistory<CR>
 nnoremap <silent> <Leader>fd :lua require('telescope.builtin').find_files({ cwd = "$HOME/.dotfiles", hidden = true })<CR>
-" nnoremap <silent> <Leader>tc :DashboardChangeColorscheme<CR>
-" nnoremap <silent> <Leader>fb :DashboardJumpMark<CR>
-" nnoremap <silent> <Leader>cn :DashboardNewFile<CR>
-" let g:dashboard_custom_shortcut={
-" \ 'last_session'       : '<leader> s l',
-" \ 'find_history'       : '<leader> f h',
-" \ 'find_file'          : '<leader> f f',
-" \ 'new_file'           : '<leader> c n',
-" \ 'change_colorscheme' : '<leader> t c',
-" \ 'find_word'          : '<leader> f a',
-" \ 'book_marks'         : '<leader> f b',
-" \ }
-
-" let g:dashboard_custom_section={
-" \ 'buffer_list': {
-"   \ 'description': [' Recently lase session                 SPC b b'],
-"   \ 'command': '' }
-"   \ }
 
 lua << EOF
 vim.g.dashboard_custom_section = {
@@ -161,10 +147,18 @@ vim.g.dashboard_custom_section = {
   }
 EOF
 
-
 " vim-smoothie
 let g:smoothie_experimental_mappings=1
 
+" markdown-preview.nvim
+
+" vim-easy-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" vim-rg
 if executable('rg')
   let g:rg_derive_root='true'
 endif
