@@ -84,6 +84,7 @@ alias gdsf="git dsf"
 # macOS
 alias on="open -n -a"
 alias ons="open -n -a Slack"
+alias finder="open ."
 
 # neovim
 alias v="nvim"
