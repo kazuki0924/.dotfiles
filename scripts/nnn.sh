@@ -4,7 +4,7 @@
 # Nerd Font installed
 
 # install nnn
-git clone https://github.com/jarun/nnn $HOME/.oss
+git clone https://github.com/jarun/nnn $HOME/.oss/nnn
 cd $HOME/.oss/nnn
 make O_NERD=1 
 trash-put /usr/local/bin/nnn
