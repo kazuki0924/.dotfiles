@@ -1,14 +1,12 @@
 #!/bin/bash
 
-# show hidden files
-defaults write com.apple.finder AppleShowAllFiles TRUE
-
 # create directories
 DIRS=(
   Repositories
   Screenshots
   Miscellaneous
   Documents/{Personal,Work}
+  .oss
 )
 
 (
