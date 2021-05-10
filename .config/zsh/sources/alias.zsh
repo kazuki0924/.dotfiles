@@ -109,3 +109,6 @@ alias gls='gls --color="auto"'
 
 # git config
 alias git_config_local="bash $HOME/.dotfiles/scripts/git_config_local.sh"
+
+# PlistBuddy
+alias plb="/usr/libexec/PlistBuddy -c"

@@ -3,8 +3,6 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export VISUAL="nvim"
 export EDITOR="nvim"
 export PAGER="less -R"
-export TERM="alacritty"
-export TERMINAL="alacritty"
 export LANG='us_EN.UTF-8'
 
 # go
