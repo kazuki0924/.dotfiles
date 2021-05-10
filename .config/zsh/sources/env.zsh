@@ -3,7 +3,9 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export VISUAL="nvim"
 export EDITOR="nvim"
 export PAGER="less -R"
-export LANG='us_EN.UTF-8'
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
 # go
 # also in ~/.config/zsh/eval.zsh
