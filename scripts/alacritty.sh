@@ -1,10 +1,14 @@
 #!/bin/bash
 
 # Required:
-# cargo setup
+# cargo setup done
+
+# sudo
+sudo -v
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # install Alacritty
-git clone https://github.com/alacritty/alacritty $HOME/.oss
+git clone https://github.com/alacritty/alacritty $HOME/.oss/alacritty
 cd $HOME/.oss/alacritty
 rustup override set stable
 rustup update stable
