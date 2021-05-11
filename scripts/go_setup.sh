@@ -1,26 +1,33 @@
 #!/bin/bash
 
-# Required:
-# fzf to be installed
+# Expected:
+# homebrew to be installed
+# goenv fzf to be installed via Brewfile (or it will be installed)
 
 # goenv
-which goenv >/dev/null 2>&1 || brew install goenv --HEAD
-which fzf >/dev/null 2>&1 || brew install fzf
+which fzf &>/dev/null || brew install fzf
+which goenv &>/dev/null || brew install goenv --HEAD
 brew upgrade goenv --fetch-HEAD
 
 echo Choose which version of go to install globally
-VERSION=$(goenv install --list | sort -rn -k 2 -t "." | fzf --layout=reverse --height=20%)
+# fuzzy find versions filtering out only the numbered ones in reverse order
+VERSION=$(goenv install --list | awk '$0 !~ /[a-z]/' | sort -rn -k 2 -t "." | fzf --layout=reverse --height=20%)
 goenv install $VERSION
 goenv global $VERSION
 
-echo goenv versions
+echo ""
+echo goenv versions;
+
 goenv versions
 
-# # install Go packages
+# install w/ go get 
 env GO111MODULE=on >/dev/null 2>&1
 
-# # slit
+echo ""
+echo installing go packages...
+
+# slit
 go get -u github.com/tigrawap/slit/cmd/slit
 
-# # pistol
+# pistol
 go get -u github.com/doronbehar/pistol/cmd/pistol

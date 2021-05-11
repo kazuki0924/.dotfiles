@@ -7,19 +7,25 @@ export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
-# go
-# also in ~/.config/zsh/eval.zsh
+# also check ~/.config/zsh/eval.zsh
+
+# go / goenv
 export GOENV_ROOT="$HOME/.goenv"
 
-# python
-# Todo: use pyenv
-export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+# python / pyenv
+export PYENV_ROOT="$HOME/.pyenv"
 
-# rust
+# nodejs / fnm
+export PATH="$PATH:$HOME/.fnm"
+
+# rust / cargo
 export PATH="$PATH:$HOME/.cargo/bin"
 
 # alacritty
 export PATH="$PATH:/Applications/Alacritty.app/Contents/MacOS"
+
+# vs code
+export PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH"
 
 # nnn
 export NNN_OPTS="acdfrwAFH"

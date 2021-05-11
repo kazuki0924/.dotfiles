@@ -58,9 +58,9 @@ alias bbcl="brew bundle cleanup"
 # uninstall all installed homebrew formula not in this brewfile:
 alias bbc="brew bundle cleanup --force"
 
-# python
-alias pip="pip3"
-alias python="python3"
+# # python
+# alias pip="pip3"
+# alias python="python3"
 
 # trash-cli
 alias rm='echo "This is not the command you are looking for."; false'

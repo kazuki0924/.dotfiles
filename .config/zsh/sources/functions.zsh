@@ -26,3 +26,7 @@ function tsV {
 function mdtv {
   mkdir -p "$(dirname "$1")" && touch "$1" && nvim "$1"
 }
+
+function iCloud {
+  printf "~/Library/Mobile\ Documents/com~apple~CloudDocs"
+}
