@@ -10,6 +10,7 @@ SIDEBAR_ITEMS_TO_DELETE=(
   Movies
   Music
   Pictures
+  /
 )
 
 for ITEM in "${SIDEBAR_ITEMS_TO_DELETE[@]}"; do
