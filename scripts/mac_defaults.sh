@@ -1,20 +1,44 @@
 #!/bin/bash
 
+# macOS defaults for Big Sur
+
 # Useful links
-# https://macos-defaults.com/
+# - https://macos-defaults.com/
+# - https://github.com/MartinHarding/macOSuckless
+# - https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+
+# Useful tools
+# - https://github.com/zcutlip/prefsniff
+
+# Requires manual configurations:
+# General: Appearance
+# General: Prefer tabs
+# General: Close windows when quitting an app
+# Recent items
+# Allow Handoff between devices
+
 
 # kill System Preferences
 osascript -e 'tell application "System Preferences" to quit'
 
-# sudo
+# sudo whilst the process
 sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# System Preferences
+
+## General
+
+### Highlight color
+defaults delete NSGlobalDomain AppleHighlightColor
+
+### Sidebar icon size
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+
+### Click in the scroll bar to: Jump to the spot that's clicked
+defaults write NSGlobalDomain AppleScrollerPagingBehavior -bool true
+
 # Dock
-
-# make dock empty
-defaults delete com.apple.dock persistent-apps
-
 defaults write com.apple.dock "orientation" -string "bottom"
 defaults write com.apple.dock "autohide" -bool "false"
 defaults write com.apple.dock "tilesize" -int "36"
@@ -58,6 +82,8 @@ defaults write com.apple.screencapture "location" -string "~/Screenshots"
 # Menu Bar
 defaults write com.apple.menuextra.clock "FlashDateSeparators" -bool "true"
 defaults write com.apple.menuextra.clock "DateFormat" -string "\"EEE d MMM HH:mm:ss\""
+defaults write com.apple.Siri StatusMenuVisible -bool false
+defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" -bool false
 
 
 # Time Machine
