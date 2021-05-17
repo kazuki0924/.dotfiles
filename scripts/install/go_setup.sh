@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # Expected:
 # homebrew to be installed
@@ -12,15 +12,15 @@ brew upgrade goenv --fetch-HEAD
 echo Choose which version of go to install globally
 # fuzzy find versions filtering out only the numbered ones in reverse order
 VERSION=$(goenv install --list | awk '$0 !~ /[a-z]/' | sort -rn -k 2 -t "." | fzf --layout=reverse --height=20%)
-goenv install $VERSION
-goenv global $VERSION
+goenv install "$VERSION"
+goenv global "$VERSION"
 
 echo ""
-echo goenv versions;
+echo goenv versions
 
 goenv versions
 
-# install w/ go get 
+# install w/ go get
 env GO111MODULE=on >/dev/null 2>&1
 
 echo ""

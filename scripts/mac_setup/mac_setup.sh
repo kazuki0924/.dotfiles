@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # create directories
 DIRS=(
@@ -11,12 +11,11 @@ DIRS=(
 
 (
   cd
-  for dir in "${DIRS[@]}"; do
-    [ ! -d "$HOME/$dir" ] && mkdir -pv "$HOME/$dir"
-    echo created $dir directory
+  for DIR in "${DIRS[@]}"; do
+    [ ! -d "$HOME/$DIR" ] && mkdir -pv "$HOME/$DIR"
+    echo created "$DIR" directory
   done
 )
 
 # Command Line Tools
 xcode-select --install
-

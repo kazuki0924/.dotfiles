@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # replace items in the macOS Dock
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # Determine the bundle bundle ID via
 #   mdls /Applications/iPhoto.app | grep kMDItemCF
@@ -39,5 +39,5 @@ TEXTS=(
 )
 
 for TEXT in "${TEXTS[@]}"; do
-  duti -s $EDITOR $TEXT all
+  duti -s $EDITOR "$TEXT" all
 done

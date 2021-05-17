@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # dircolors-solorized
 git clone https://github.com/seebi/dircolors-solarized ~/Miscellaneous/dircolors-solarized

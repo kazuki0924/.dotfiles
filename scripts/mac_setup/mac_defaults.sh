@@ -1,11 +1,16 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # macOS defaults for Big Sur
 
 # Useful links
+# - https://github.com/ulwlu/dotfiles/blob/master/system/macos.sh
 # - https://macos-defaults.com/
+# - https://github.com/yannbertrand/macos-defaults/tree/master/record#readme
+# - https://github.com/herrbischoff/awesome-macos-command-line
 # - https://github.com/MartinHarding/macOSuckless
 # - https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+# - https://github.com/kevinSuttle/macOS-Defaults/blob/master/REFERENCE.md
+# - https://github.com/webpro/dotfiles/blob/master/macos/defaults.sh
 
 # Useful tools
 # - https://github.com/zcutlip/prefsniff
@@ -17,13 +22,16 @@
 # Recent items
 # Allow Handoff between devices
 
-
 # kill System Preferences
 osascript -e 'tell application "System Preferences" to quit'
 
 # sudo whilst the process
 sudo -v
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+	sudo -n true
+	sleep 60
+	kill -0 "$$" || exit
+done 2>/dev/null &
 
 # System Preferences
 
@@ -37,15 +45,6 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
 
 ### Click in the scroll bar to: Jump to the spot that's clicked
 defaults write NSGlobalDomain AppleScrollerPagingBehavior -bool true
-
-# Dock
-defaults write com.apple.dock "orientation" -string "bottom"
-defaults write com.apple.dock "autohide" -bool "false"
-defaults write com.apple.dock "tilesize" -int "36"
-defaults write com.apple.dock "show-recents" -bool "false"
-defaults write com.apple.dock "mineffect" -string "suck"
-defaults write com.apple.dock "enable-spring-load-actions-on-all-items" -bool "true"
-defaults write com.apple.dock showhidden -boolean true
 
 # Finder
 defaults write com.apple.finder "QuitMenuItem" -bool "true"
@@ -74,10 +73,8 @@ defaults read com.apple.finder NewWindowTargetPath -string file://$HOME
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 
-
 # Screenshots
 defaults write com.apple.screencapture "location" -string "~/Screenshots"
-
 
 # Menu Bar
 defaults write com.apple.menuextra.clock "FlashDateSeparators" -bool "true"
@@ -85,38 +82,24 @@ defaults write com.apple.menuextra.clock "DateFormat" -string "\"EEE d MMM HH:mm
 defaults write com.apple.Siri StatusMenuVisible -bool false
 defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" -bool false
 
-
 # Time Machine
 defaults write com.apple.TimeMachine "DoNotOfferNewDisksForBackup" -bool "true"
-
 
 # Sound
 sudo nvram SystemAudioVolume=" "
 
-
 # Scroll Bars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
-
 
 # Mission Control
 
 # Don't sort Mission Control Spaces by most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
-
-# Keyboard
-
-# use keyrepeat instead of special character insert dialog on press-and-hold
-defaults write -g ApplePressAndHoldEnabled -bool false
-defaults write -g InitialKeyRepeat -float 50
-defaults write -g KeyRepeat -float 1
-
 # Crash Reporter
 
 # make crash reporter appear as a notification instead of a floating window
 defaults write com.apple.CrashReporter UseUNC 1
-
-
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -153,7 +136,7 @@ defaults write com.apple.helpviewer DevMode -bool true
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2>/dev/null
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
@@ -226,7 +209,7 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
+sudo systemsetup -settimezone "Europe/Brussels" >/dev/null
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
@@ -257,7 +240,7 @@ sudo pmset -b sleep 5
 sudo pmset -a standbydelay 86400
 
 # Never go into computer sleep mode
-sudo systemsetup -setcomputersleep Off > /dev/null
+sudo systemsetup -setcomputersleep Off >/dev/null
 
 # Hibernation mode
 # 0: Disable hibernation (speeds up entering sleep mode)
@@ -668,11 +651,11 @@ defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 # Load new settings before rebuilding the index
-killall mds > /dev/null 2>&1
+killall mds >/dev/null 2>&1
 # Make sure indexing is enabled for the main volume
-sudo mdutil -i on / > /dev/null
+sudo mdutil -i on / >/dev/null
 # Rebuild the index from scratch
-sudo mdutil -E / > /dev/null
+sudo mdutil -E / >/dev/null
 
 ###############################################################################
 # Terminal & iTerm 2                                                          #
@@ -754,7 +737,7 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+hash tmutil &>/dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Activity Monitor                                                            #
@@ -870,123 +853,14 @@ defaults write com.google.Chrome.canary DisablePrintPreview -bool true
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
-###############################################################################
-# GPGMail 2                                                                   #
-###############################################################################
+# killall
+APPS=(
+	Dock
+	Finder
+	cfprefsd
+	SystemUIServer
+)
 
-# Disable signing emails by default
-defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool false
-
-###############################################################################
-# Opera & Opera Developer                                                     #
-###############################################################################
-
-# Expand the print dialog by default
-defaults write com.operasoftware.Opera PMPrintingExpandedStateForPrint2 -boolean true
-defaults write com.operasoftware.OperaDeveloper PMPrintingExpandedStateForPrint2 -boolean true
-
-###############################################################################
-# SizeUp.app                                                                  #
-###############################################################################
-
-# Start SizeUp at login
-defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
-
-# Don’t show the preferences window on next start
-defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
-
-###############################################################################
-# Sublime Text                                                                #
-###############################################################################
-
-# Install Sublime Text settings
-cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
-
-###############################################################################
-# Spectacle.app                                                               #
-###############################################################################
-
-# Set up my preferred keyboard shortcuts
-cp -r init/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
-
-###############################################################################
-# Transmission.app                                                            #
-###############################################################################
-
-# Use `~/Documents/Torrents` to store incomplete downloads
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
-
-# Use `~/Downloads` to store completed downloads
-defaults write org.m0k.transmission DownloadLocationConstant -bool true
-
-# Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
-defaults write org.m0k.transmission MagnetOpenAsk -bool false
-
-# Don’t prompt for confirmation before removing non-downloading active transfers
-defaults write org.m0k.transmission CheckRemoveDownloading -bool true
-
-# Trash original torrent files
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
-# Hide the donate message
-defaults write org.m0k.transmission WarningDonate -bool false
-# Hide the legal disclaimer
-defaults write org.m0k.transmission WarningLegal -bool false
-
-# IP block list.
-# Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
-defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-
-# Randomize port on launch
-defaults write org.m0k.transmission RandomPort -bool true
-
-###############################################################################
-# Twitter.app                                                                 #
-###############################################################################
-
-# Disable smart quotes as it’s annoying for code tweets
-defaults write com.twitter.twitter-mac AutomaticQuoteSubstitutionEnabled -bool false
-
-# Show the app window when clicking the menu bar icon
-defaults write com.twitter.twitter-mac MenuItemBehavior -int 1
-
-# Enable the hidden ‘Develop’ menu
-defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
-
-# Open links in the background
-defaults write com.twitter.twitter-mac openLinksInBackground -bool true
-
-# Allow closing the ‘new tweet’ window by pressing `Esc`
-defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
-
-# Show full names rather than Twitter handles
-defaults write com.twitter.twitter-mac ShowFullNames -bool true
-
-# Hide the app in the background if it’s not the front-most window
-defaults write com.twitter.twitter-mac HideInBackground -bool true
-
-###############################################################################
-# Tweetbot.app                                                                #
-###############################################################################
-
-# Bypass the annoyingly slow t.co URL shortener
-defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
-
-###############################################################################
-# Kill affected applications                                                  #
-###############################################################################
-
-for app in "Activity Monitor" \
-	"cfprefsd" \
-	"Dock" \
-	"Finder" \
-	"Google Chrome Canary" \
-	"Google Chrome" \
-	"SystemUIServer"; do
-	killall "${app}" &> /dev/null
+for APP in "${APPS[@]}"; do
+	killall $APP &>/dev/null
 done
-echo "Done. Note that some of these changes require a logout/restart to take effect."

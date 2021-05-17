@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 ### homebrew
 which brew >/dev/null 2>&1 || sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash

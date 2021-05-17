@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/bash -e
 
 echo global user.name:
-read USER_NAME
+read -r USER_NAME
 echo global user.emal:
-read USER_EMAL
+read -r USER_EMAL
 
-tee -a ~/.gitconfig.user << END
+tee -a ~/.gitconfig.user <<END
 [user]
     name = $USER_NAME
     email = $USER_EMAL
