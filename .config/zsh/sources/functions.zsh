@@ -30,3 +30,8 @@ function mdtv {
 function iCloud {
   printf "~/Library/Mobile\ Documents/com~apple~CloudDocs"
 }
+
+function ffcd {
+  DIR=$(find . -type d | fzy)
+  cd "$DIR"
+}

@@ -3,8 +3,9 @@
 # Finder
 
 COMMANDS=(
-)
 
+
+)
 function echo_defaults {
   for COMMAND in "${COMMANDS[@]}"; do
     echo "$COMMAND"

@@ -103,6 +103,8 @@ alias muxd="tmuxinator start dotfiles"
 # fzy
 alias ffv="find . -type f | fzy | xargs nvim"
 alias fdv="find ~/.dotfiles -type f | fzy | xargs nvim"
+alias ffsh="find . -type f | fzy | xargs bash"
+alias fdsh="find ~/.dotfiles -type f | fzy | xargs bash"
 
 # gls
 alias gls='gls --color="auto"'

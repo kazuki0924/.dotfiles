@@ -25,6 +25,9 @@
 # kill System Preferences
 osascript -e 'tell application "System Preferences" to quit'
 
+U="hi"
+echo $U
+
 # sudo whilst the process
 sudo -v
 while true; do

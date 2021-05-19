@@ -27,8 +27,14 @@ echo installing with pip...
 echo ""
 
 # vimiv
-pip install pyexiv2
-pip install -U git+https://github.com/karlch/vimiv-qt/
+pip install -U --user pyexiv2
+pip install -U --user git+https://github.com/karlch/vimiv-qt/
 
 # edir
-pip install -U edir
+pip install -U --user edir
+
+# pynvim
+python3 -m pip install -U --user pynvim
+
+# vint
+pip install -U --user vim-vint
