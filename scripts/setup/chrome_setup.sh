@@ -6,7 +6,7 @@
 # Export links of all extensions
 # https://chrome.google.com/webstore/detail/cmeckkgeamghjhkepejgjockldoblhcb
 
-DIR="$HOME/.dotfiles/Library/ApplicationSupport/Google/Chrome/External Extensions/"
+DIR="$HOME/.dotfiles/Library/Application Support/Google/Chrome/External Extensions/"
 
 echo mkdir: created directory "$DIR"
 mkdir -p "$DIR"

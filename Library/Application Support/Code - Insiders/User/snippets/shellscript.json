@@ -1,0 +1,160 @@
+{
+	// Place your snippets for shellscript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"shbang": {
+		"prefix": "!SHBANG",
+		"body": [
+			"#!/bin/bash",
+			"set -euo pipefail",
+		]
+	},
+	"array_for_loop": {
+		"prefix": "ARRAY_FOR_LOOP",
+		"body": [
+			"${1:ITEMS}=(",
+			"\t${2:ITEM1}",
+			")",
+			"for ${3:ITEM} in \"${${1:ITEMS}[@]}\"; do",
+			"\t${4:COMMAND} \"$${3:ITEM}\"",
+			"done\n",
+		],
+		"description": "run commands in array for loop"
+	},
+	"requirements_for_loop": {
+		"prefix": "REQUIREMENTS_FOR_LOOP",
+		"body": [
+			"REQUIREMENTS=(",
+			"\t${1}",
+			")\n",
+			"for REQUIREMENT in \"${REQUIREMENTS[@]}\"; do",
+			"\twhich \"$REQUIREMENT\" &>/dev/null || brew install \"$REQUIREMENT\"",
+			"done\n"
+		]
+	},
+	"fzf_array": {
+		"prefix": "FZF_ARRAY",
+		"body": [
+			"${1:ITEMS}=(",
+			"\t${2:ITEM1}",
+			")",
+			"LIST=\"\"",
+			"for ${3:ITEM} in \"${${1:ITEMS}[@]}\"; do",
+			"\tLIST+=\"$${3:ITEM}\"",
+			"done\n",
+			"SELECTED=\"$(printf \"%b\" \"\\$LIST\" | fzf --layout=reverse --height=20%)\"\n"
+		],
+		"description": "fuzzy find and select from array"
+	},
+	"if_which": {
+		"prefix": "IF_WHICH",
+		"body": [
+			"if which ${1:COMMAND} &>/dev/null; then",
+			"\t${1:COMMAND} ${2:ARG}",
+			"fi\n"
+		],
+		"description": "if command exists"
+	},
+	"echo_commands": {
+		"prefix": "ECHO_COMMANDS",
+		"body": [
+			"COMMANDS=(",
+			"\t\"${1:COMMAND}\"",
+			")\n",
+			"function echo_commands {",
+			"\tfor COMMAND in \"\\${COMMANDS[@]}\"; do",
+			"\t\t echo \"\\$COMMAND\"",
+			"\t\t\\${COMMAND}",
+			"\tdone",
+			"}\n"
+		],
+		"description": "echo what the command is before executing the command"
+	},
+	"copy_file": {
+		"prefix": "COPY_FILE",
+		"body": "cp \"\\$HOME\"/${1:FILE1} \"\\$HOME\"/${2:FILE2}\n"
+	},
+	"move_file": {
+		"prefix": "MOVE_FILE",
+		"body": "mv \"\\$HOME\"/${1:FILE1} \"\\$HOME\"/${2:FILE2}\n"
+	},
+	"delete_if_exists": {
+		"prefix": "DELETE_IF_EXISTS",
+		"body": [
+			"FILE=\"\\$HOME/${1:FILE}\"",
+			"[[ -f \" \\$FILE\" ]] && trash-put \"\\$FILE\"\n"
+		]
+	},
+	"read_stdin": {
+		"prefix": "READ_STDIN",
+		"body": [
+			"echo local ${1:VAR}",
+			"read -r ${1:VAR}",
+			"${2:COMMAND} \"\\$${1:VAR}\"\n"
+		],
+		"description": "repl for writing snippets"
+	},
+	"mkdirs": {
+		"prefix": "MKDIRS",
+		"body": [
+			"DIRS=(",
+			"\t${1:DIR}",
+			")\n",
+			"(",
+			"\tcd || exit",
+			"\tfor DIR in \"\\${DIRS[@]}\"; do",
+			"\t\t[ ! -d \"\\$HOME/\\$DIR\" ] && mkdir -p \"\\$HOME/\\$DIR\"",
+			"\t\techo created directory: \"\\$DIR\"",
+			"\tdone",
+			")\n"
+		],
+	},
+	"if": {
+		"prefix": "IF",
+		"body": "if ${1:CONDITION}; then\n\t${2}\nfi\n"
+	},
+	"elseif": {
+		"prefix": "ELSEIF",
+		"body": "elif ${1:CONDITION}; then\n\t${2}"
+	},
+	"else": {
+		"prefix": "ELSE",
+		"body": "else\n\t${1}"
+	},
+	"for_in": {
+		"prefix": "FORIN",
+		"body": "for ${1:ITEM} in $${2:ITEMS}; do\n\techo $${1:ITEM}\ndone\n",
+		"description": "for x in $y"
+	},
+	"for_i": {
+		"prefix": "FORI",
+		"body": "for((${1:i}=0; ${1} < ${2:10}; ${1}++)); do\n\techo $${1}\ndone\n",
+		"description": "for index"
+	},
+	"while": {
+		"prefix": "WHILE",
+		"body": "while ${1:CONDITION}; do\n\t${2}\ndone\n"
+	},
+	"until": {
+		"prefix": "UNTIL",
+		"body": "until ${1:CONDITION}; do\n\t${2}\ndone\n"
+	},
+	"function": {
+		"prefix": "FUNCTION",
+		"body": "function ${1:NAME}() {\n\t${2}\n}"
+	},
+	"case": {
+		"prefix": "CASE",
+		"body": "case $${1:VAR} in\n\t${2:1})\n\t\t${3}\n\t\t;;\nesac\n"
+	}
+}

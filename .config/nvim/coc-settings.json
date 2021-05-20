@@ -2,18 +2,30 @@
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
+      "args": [
+        "start"
+      ],
+      "filetypes": [
+        "sh"
+      ],
+      "ignoredRootPaths": [
+        "~"
+      ]
     }
   },
   "diagnostic-languageserver.filetypes": {
     "vim": "vint",
-    "markdown": [ "write-good", "markdownlint" ],
+    "markdown": [
+      "write-good",
+      "markdownlint"
+    ],
     "sh": "shellcheck"
   },
   "diagnostic-languageserver.formatFiletypes": {
     "lua": "lua-format",
     "sh": "shfmt"
-  }
+  },
+  "snippets.textmateSnippetsRoots": [
+    "~/.config/nvim/vs-code-snippets"
+  ]
 }

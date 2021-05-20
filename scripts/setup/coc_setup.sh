@@ -53,7 +53,7 @@ PLUGINS=(
   # https://github.com/neoclide/coc-emmet
   coc-emmet
   # https://github.com/josa42/coc-sh
-  coc-sh
+  # coc-sh
   # https://github.com/josa42/coc-docker
   coc-docker
   # https://github.com/fannheyward/coc-sql

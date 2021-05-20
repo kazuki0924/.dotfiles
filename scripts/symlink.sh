@@ -1,19 +1,24 @@
 #!/bin/bash
-set -euo pipefail
 
 # Symbolic links:
 # - creates directory and the symbolic links to the host dynamically
 # - backup existing file
 
-# DOT_DIRNAME=".dotfiles"
-# if [ -n "$1" ]; then
-#   DOT_DIRNAME=$1
-# fi
+# Requirements:
+# fd
 
-DOT_DIRNAME="${1-.dotfiles}"
+REQUIREMENTS=(
+  fd
+)
+
+for REQUIREMENT in "${REQUIREMENTS[@]}"; do
+  which "$REQUIREMENT" &>/dev/null || brew install "$REQUIREMENT"
+done
+
+DOT_DIRNAME="${1-".dotfiles"}"
 
 DOTFILES_DIR="$HOME/$DOT_DIRNAME"
-DOTFILES_BACKUP_DIR=".dotfiles_backup_$(date +"%Y_%m_%d")"
+DOTFILES_BACKUP_DIR=".dotfiles_backup_$(date +"%Y_%m_%d_%H%M%S")"
 
 # list of directories to not be included in files for creating symbolic links
 NOT_DOTDIRS=(
@@ -28,72 +33,51 @@ NOT_DOTFILES=(
   .DS_Store
   README.md
   Makefile
-  .gitignore
 )
 
 # create .dotfiles_backup in homedir
 (
-  cd
-  mkdir -pv "$DOTFILES_BACKUP_DIR"
+  cd || exit
+  mkdir -p "$DOTFILES_BACKUP_DIR"
 )
 
-to_dir_patterns() {
-  local S
-  for V in "$@"; do
-    S+="./$V|"
-  done
-  S=${S%?}
-  echo "$S"
-}
+cd "$DOTFILES_DIR" || exit
 
-to_dir_patterns_for_files() {
-  local S
-  for V in "$@"; do
-    S+="./$V/|"
-  done
-  S=${S%?}
-  echo "$S"
-}
+FIND_DIRS_COMMAND="fd -t d -H"
+FIND_FILES_COMMAND="fd -t f -H"
 
-to_file_patterns() {
-  local S
-  for V in "$@"; do
-    S+="$V|"
-  done
-  S=${S%?}
-  echo "$S"
-}
+for NOT_DOTDIR in "${NOT_DOTDIRS[@]}"; do
+  FIND_DIRS_COMMAND+=" -E $NOT_DOTDIR"
+  FIND_FILES_COMMAND+=" -E $NOT_DOTDIR"
+done
 
-DP=$(to_dir_patterns "${NOT_DOTDIRS[@]}")
-DPF=$(to_dir_patterns_for_files "${NOT_DOTDIRS[@]}")
-FP=$(to_file_patterns "${NOT_DOTFILES[@]}")
-P="$DPF|$FP"
+for NOT_DOTFILE in "${NOT_DOTFILES[@]}"; do
+  FIND_FILES_COMMAND+=" -E $NOT_DOTFILE"
+done
 
-cd "$DOTFILES_DIR"
-
-DIRS=$(find . -type d | grep -E -v "^($DP)")
-FILES=$(find . -type f | grep -E -v "$P")
+mapfile -t DIRS < <(eval "$FIND_DIRS_COMMAND")
+mapfile -t FILES < <(eval "$FIND_FILES_COMMAND")
 
 # mkdir for creating symbolic links
+
 (
-  cd
-  for DIR in $DIRS; do
-    [[ "$DIR" == "." ]] && continue
+  cd || exit
+  for DIR in "${DIRS[@]}"; do
     echo creating directory "$DIR"...
-    mkdir -p "$DIR"
+    mkdir -p "$HOME/$DIR"
   done
 )
 
 # backup files and create symbolic links
 (
-  cd
-  for FILE in $FILES; do
-    if [ -f "$FILE" ]; then
-      echo moving existing files to backup...
-      mv "$FILE" "$DOTFILES_BACKUP_DIR"
+  cd || exit
+  for FILE in "${FILES[@]}"; do
+    if [[ -f "$FILE" ]]; then
+      echo moving existing files to backup:
+      mv "$HOME/$FILE" "$DOTFILES_BACKUP_DIR"
     fi
-    DOTFILE=$HOME/$DOT_DIRNAME/${FILE:2}
-    echo creating symlink...
+    DOTFILE="$DOTFILES_DIR/$FILE"
+    echo creating symlink:
     ln -sfnv "$DOTFILE" "$FILE"
   done
 )
