@@ -16,7 +16,7 @@
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>
-			<key>NSRequiredContext</key>
+			<key>NSRequirementsContext</key>
 			<dict>
 				<key>NSApplicationIdentifier</key>
 				<string>com.apple.finder</string>

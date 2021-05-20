@@ -26,7 +26,7 @@
   # restarting zsh. Edit ~/.p10k.zsh and type `source ~/.p10k.zsh`.
   unset -m '(POWERLEVEL9K_*|DEFAULT_USER)~POWERLEVEL9K_GITSTATUS_DIR'
 
-  # Zsh >= 5.1 is required.
+  # Zsh >= 5.1 is Requirements.
   autoload -Uz is-at-least && is-at-least 5.1 || return
 
   # The list of segments shown on the left. Fill it with the most important segments.

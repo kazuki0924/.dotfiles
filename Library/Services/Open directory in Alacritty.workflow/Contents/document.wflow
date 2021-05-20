@@ -109,7 +109,7 @@
 						<integer>0</integer>
 						<key>name</key>
 						<string>inputMethod</string>
-						<key>required</key>
+						<key>Requirements</key>
 						<string>0</string>
 						<key>type</key>
 						<string>0</string>
@@ -122,7 +122,7 @@
 						<false/>
 						<key>name</key>
 						<string>CheckedForUserDefaultShell</string>
-						<key>required</key>
+						<key>Requirements</key>
 						<string>0</string>
 						<key>type</key>
 						<string>0</string>
@@ -135,7 +135,7 @@
 						<string></string>
 						<key>name</key>
 						<string>source</string>
-						<key>required</key>
+						<key>Requirements</key>
 						<string>0</string>
 						<key>type</key>
 						<string>0</string>
@@ -148,7 +148,7 @@
 						<string></string>
 						<key>name</key>
 						<string>COMMAND_STRING</string>
-						<key>required</key>
+						<key>Requirements</key>
 						<string>0</string>
 						<key>type</key>
 						<string>0</string>
@@ -161,7 +161,7 @@
 						<string>/bin/sh</string>
 						<key>name</key>
 						<string>shell</string>
-						<key>required</key>
+						<key>Requirements</key>
 						<string>0</string>
 						<key>type</key>
 						<string>0</string>

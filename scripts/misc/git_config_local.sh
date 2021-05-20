@@ -1,4 +1,10 @@
-#!/bin/bash -e
+#!/bin/bash
+set -euo pipefail
+
+# git: add user to git locally
+
+# Requirements:
+# git
 
 echo local user.name:
 read -r USER_NAME

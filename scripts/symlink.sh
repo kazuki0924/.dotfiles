@@ -1,8 +1,17 @@
-#!/bin/bash -e
-DOT_DIRNAME=".dotfiles"
-if [ -n "$1" ]; then
-  DOT_DIRNAME=$1
-fi
+#!/bin/bash
+set -euo pipefail
+
+# Symbolic links:
+# - creates directory and the symbolic links to the host dynamically
+# - backup existing file
+
+# DOT_DIRNAME=".dotfiles"
+# if [ -n "$1" ]; then
+#   DOT_DIRNAME=$1
+# fi
+
+DOT_DIRNAME="${1-.dotfiles}"
+
 DOTFILES_DIR="$HOME/$DOT_DIRNAME"
 DOTFILES_BACKUP_DIR=".dotfiles_backup_$(date +"%Y_%m_%d")"
 

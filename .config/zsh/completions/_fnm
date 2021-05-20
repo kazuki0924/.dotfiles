@@ -230,7 +230,7 @@ _fnm_commands() {
 "ls:List all locally installed Node.js versions" \
 "install:Install a new Node.js version" \
 "use:Change Node.js version" \
-"env:Print and set up required environment variables for fnm" \
+"env:Print and set up Requirements environment variables for fnm" \
 "completions:Print shell completions to stdout" \
 "alias:Alias a version to a common name" \
 "default:Set a version as the default version" \
