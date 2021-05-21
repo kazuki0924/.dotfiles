@@ -353,7 +353,7 @@ endif
 "     autocmd VimLeave * set guicursor=a:hor20-blinkwait400-blinkoff400-blinkon400
 " augroup END
 
-set guicursor=n:hor20,i:ver30
+" set guicursor=n:hor20,i:ver30
 
 " augroup RestoreCursorShapeOnExit
 "     autocmd!

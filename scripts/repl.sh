@@ -1,46 +1,35 @@
 #!/usr/local/bin/bash
 set -euo pipefail
 
-# repl for testing bash scripts
+function __dircopy {
+  DIR="${2-"$(pwd)"}"
 
-# read -p "Continue? [Yn]" -n 1 -r
-# echo
-# if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-#   exit 1
-# fi
-
-# DOT_DIRNAME="${1-.dotfiles}"
-
-function pwdcopy {
-  PWD=$(echo -n "$(pwd)")
-  function HOME {
-    echo "$PWD" | sed "s|$HOME|\$HOME|" | pbcopy
+  function __home {
+    echo -n "\"$DIR\"" | sed "s|$HOME|\$HOME|" | pbcopy
   }
 
-  case $1 in
+  case ${1-""} in
 
   --tilde | -t)
-    echo "$PWD" | sed "s|$HOME|~|" | pbcopy
-    ;;
-
-  --home | -h)
-    HOME
+    echo -n "$DIR" | sed "s|$HOME|~|" | pbcopy
     ;;
 
   --full-path | -f)
-    echo "$PWD" | pbcopy
+    echo -n "$DIR" | pbcopy
+    ;;
+
+  --home | -h | "")
+    __home
     ;;
 
   *)
-    HOME
+    __home
     ;;
   esac
-
-  # echo -n "$(pwd)" | sed "s|$HOME|\$HOME|" | cat | pbcopy
 }
 
-tee -a "$FILE" <<END
-[user]
-    name = $USER_NAME
-    email = $USER_EMAL
-END
+function __fuzzy_find_dir {
+  if [[ "$1" ]]; then
+    echo -n "$(fd -t d "$1" | head -1)"
+  fi
+}

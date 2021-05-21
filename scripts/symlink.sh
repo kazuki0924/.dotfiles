@@ -60,16 +60,14 @@ mapfile -t FILES < <(eval "$FIND_FILES_COMMAND")
 for DIR in "${DIRS[@]}"; do
   echo creating directory "$DIR"...
   mkdir -p "$HOME/$DIR"
-  mkdir -p "$DOTFILES_BACKUP_DIR/$DIR"
 done
 
 # backup files and create symbolic links
 for FILE in "${FILES[@]}"; do
   if [[ -f "$HOME/$FILE" ]] && [[ ! -L "$HOME/$FILE" ]]; then
     echo moving existing files to backup:
-    mv "$HOME/$FILE" "$DOTFILES_BACKUP_DIR/$FILE"
+    mv "$HOME/$FILE" "$DOTFILES_BACKUP_DIR"
   fi
-  DOTFILE="$DOTFILES_DIR/$FILE"
   echo creating symlink:
-  ln -sfnv "$DOTFILE" "$HOME/$FILE"
+  ln -sfnv "$DOTFILES_DIR/$FILE" "$HOME/$FILE"
 done

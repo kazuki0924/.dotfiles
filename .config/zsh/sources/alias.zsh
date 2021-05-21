@@ -58,9 +58,9 @@ alias bbcl="brew bundle cleanup"
 # uninstall all installed homebrew formula not in this brewfile:
 alias bbc="brew bundle cleanup --force"
 
-# # python
-# alias pip="pip3"
-# alias python="python3"
+# python
+alias pip="pip3"
+alias python="python3"
 
 # trash-cli
 alias rm='echo "This is not the command you are looking for."; false'
@@ -100,17 +100,11 @@ alias clear="clear && printf '\e[3J'"
 # tmuxinator
 alias muxd="tmuxinator start dotfiles"
 
-# fzy
-alias ffv="find . -type f | fzy | xargs nvim"
-alias fdv="find ~/.dotfiles -type f | fzy | xargs nvim"
-alias ffsh="find . -type f | fzy | xargs bash"
-alias fdsh="find ~/.dotfiles -type f | fzy | xargs bash"
-
 # gls
 alias gls='gls --color="auto"'
 
 # git config
-alias git_config_local="bash $HOME/.dotfiles/scripts/git_config_local.sh"
+alias gcl="bash $HOME/.dotfiles/scripts/git_config_local.sh"
 
 # PlistBuddy
 alias plb="/usr/libexec/PlistBuddy -c"
