@@ -1,4 +1,4 @@
-SHELL=/bin/bash
+SHELL := /usr/local/bin/bash
 
 .PHONY: setup symlink fonts mac install homebrew npm_install_g curl
 

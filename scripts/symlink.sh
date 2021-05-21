@@ -18,14 +18,13 @@ done
 DOT_DIRNAME="${1-".dotfiles"}"
 
 DOTFILES_DIR="$HOME/$DOT_DIRNAME"
-DOTFILES_BACKUP_DIR=".dotfiles_backup_$(date +"%Y_%m_%d_%H%M%S")"
+DOTFILES_BACKUP_DIR="$HOME/.dotfiles_backup_$(date +"%Y_%m_%d_%H%M%S")"
 
 # list of directories to not be included in files for creating symbolic links
 NOT_DOTDIRS=(
   .git
   .gitsecret
   scripts
-  assets
 )
 
 # list of files to not be included in files for creating symbolic links
@@ -36,10 +35,7 @@ NOT_DOTFILES=(
 )
 
 # create .dotfiles_backup in homedir
-(
-  cd || exit
-  mkdir -p "$DOTFILES_BACKUP_DIR"
-)
+mkdir -p "$DOTFILES_BACKUP_DIR"
 
 cd "$DOTFILES_DIR" || exit
 
@@ -60,24 +56,18 @@ mapfile -t FILES < <(eval "$FIND_FILES_COMMAND")
 
 # mkdir for creating symbolic links
 
-(
-  cd || exit
-  for DIR in "${DIRS[@]}"; do
-    echo creating directory "$DIR"...
-    mkdir -p "$HOME/$DIR"
-  done
-)
+for DIR in "${DIRS[@]}"; do
+  echo creating directory "$DIR"...
+  mkdir -p "$HOME/$DIR"
+done
 
 # backup files and create symbolic links
-(
-  cd || exit
-  for FILE in "${FILES[@]}"; do
-    if [[ -f "$FILE" ]]; then
-      echo moving existing files to backup:
-      mv "$HOME/$FILE" "$DOTFILES_BACKUP_DIR"
-    fi
-    DOTFILE="$DOTFILES_DIR/$FILE"
-    echo creating symlink:
-    ln -sfnv "$DOTFILE" "$FILE"
-  done
-)
+for FILE in "${FILES[@]}"; do
+  if [[ -f "$FILE" ]]; then
+    echo moving existing files to backup:
+    mv "$HOME/$FILE" "$DOTFILES_BACKUP_DIR"
+  fi
+  DOTFILE="$DOTFILES_DIR/$FILE"
+  echo creating symlink:
+  ln -sfnv "$DOTFILE" "$FILE"
+done
