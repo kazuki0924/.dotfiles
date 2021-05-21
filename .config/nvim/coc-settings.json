@@ -26,6 +26,6 @@
     "sh": "shfmt"
   },
   "snippets.textmateSnippetsRoots": [
-    "~/.config/nvim/vs-code-snippets"
+    "~/.config/coc/vsc-snippets"
   ]
 }

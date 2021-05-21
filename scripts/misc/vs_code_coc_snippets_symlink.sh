@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 set -euo pipefail
 
 # coc.nivm: symlink vscode snippets to coc
 
-VS_CODE_SNIPPETS_DIR="$HOME/Library/Application Support/Code - Insiders/User/snippets"
+VS_CODE_SNIPPETS_DIR="$HOME/.dotfiles/Library/Application Support/Code - Insiders/User/snippets"
 
-COC_SNIPPETS_DIR="$HOME/.dotfiles/.config/coc/vsc-snippets"
+COC_SNIPPETS_DIR="$HOME/.config/coc/vsc-snippets"
 
 mkdir -p "$COC_SNIPPETS_DIR"
 

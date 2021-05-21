@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 set -euo pipefail
 
 # repl for testing bash scripts
@@ -44,4 +44,3 @@ tee -a "$FILE" <<END
     name = $USER_NAME
     email = $USER_EMAL
 END
-

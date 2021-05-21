@@ -15,7 +15,7 @@
 	"shbang": {
 		"prefix": "!SHBANG",
 		"body": [
-			"#!/bin/bash",
+			"/usr/local/bin/bash",
 			"set -euo pipefail",
 		]
 	},

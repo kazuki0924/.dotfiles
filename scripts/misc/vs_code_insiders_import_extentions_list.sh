@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 DIR=$HOME/.dotfiles/.config/vs-code
 echo mkdir: created directory "$DIR"
