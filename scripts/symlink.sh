@@ -39,10 +39,8 @@ NOT_DOTFILES=(
 # create .dotfiles_backup in homedir
 mkdir -p "$DOTFILES_BACKUP_DIR"
 
-cd "$DOTFILES_DIR" || exit
-
-FIND_DIRS_COMMAND="fd -t d -H"
-FIND_FILES_COMMAND="fd -t f -H"
+FIND_DIRS_COMMAND="fd -t d -H . $DOTFILES_DIR"
+FIND_FILES_COMMAND="fd -t f -H . $DOTFILES_DIR"
 
 for NOT_DOTDIR in "${NOT_DOTDIRS[@]}"; do
   FIND_DIRS_COMMAND+=" -E $NOT_DOTDIR"
