@@ -1,6 +1,6 @@
-# My dotfiles
+# my-dotfiles
 
-### currently WIP
+currently WIP
 
 ```
 git clone https://github.com/kazuki0924/.dotfiles ~/.dotfiles && cd ~/.dotfiles && make
