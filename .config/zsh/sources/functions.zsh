@@ -113,9 +113,9 @@ alias ffv="fuzzy_find_nvim"
 
 function fuzzy_find_dot_nvim {
   if [[ "$1" ]]; then
-    nvim $(__fuzzy_find_dot_file "$1")
+    nvim "$(__fuzzy_find_dot_file "$1")"
   else
-    nvim $(__fuzzy_find_dot_file)
+    nvim "$(__fuzzy_find_dot_file)"
   fi
 }
 

@@ -47,3 +47,5 @@ END
 
 readonly COMMENT=${@:?"The comment cannot be empty."}
 
+# The full path to the script directory, regardless of pwd.
+DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)

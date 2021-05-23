@@ -1,27 +1,20 @@
-SHELL := /usr/local/bin/bash
+SHELL := bash
+.ONESHELL:
+.DELETE_ON_ERROR:
+.SHELLFLAGS := -Eeuo pipefail -c
+MAKEFLAGS += --warn-undefined-variables
+MAKEFLAGS += --no-builtin-rules
 
-.PHONY: setup symlink fonts mac install homebrew npm_install_g curl
+ifeq ($(origin .RECIPEPREFIX), undefined)
+  $(error This Make does not support .RECIPEPREFIX. Please use GNU Make 4.0 or later)
+endif
+.RECIPEPREFIX = >
 
-all: setup install
+all: setup
 
-setup: symlink fonts mac 
+setup: 
+> @ git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts \
+> cd ~/.dotscripts
+> make setup
 
-symlink:
-	./scripts/symlink.sh
-
-fonts:
-	./scripts/fonts.sh
-
-mac:
-	./scripts/mac.sh
-
-install: homebrew npm_install_g curl 
-
-homebrew:
-	./scripts/homebrew.sh
-
-npm_install_g :
-	./scripts/npm_install_g.sh
-
-curl:
-	./scripts/curl.sh
+.PHONY: setup

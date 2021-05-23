@@ -13,10 +13,11 @@
 	// 	"description": "Log output to console"
 	// }
 	"shbang": {
-		"prefix": "!SHBANG",
+		"prefix": "SHBANG",
 		"body": [
-			"/usr/local/bin/bash",
-			"set -euo pipefail",
+			"#!/usr/bin/env bash",
+			"set -Eeuo pipefail",
+      "IFS=\\$'\\n\\t'\n"
 		]
 	},
 	"array_for_loop": {
@@ -27,7 +28,7 @@
 			")",
 			"for ${3:ITEM} in \"${${1:ITEMS}[@]}\"; do",
 			"\t${4:COMMAND} \"$${3:ITEM}\"",
-			"done\n",
+			"done\n"
 		],
 		"description": "run commands in array for loop"
 	},
@@ -38,7 +39,7 @@
 			"\t${1}",
 			")\n",
 			"for REQUIREMENT in \"${REQUIREMENTS[@]}\"; do",
-			"\twhich \"$REQUIREMENT\" &>/dev/null || brew install \"$REQUIREMENT\"",
+			"\twhich \"\\$REQUIREMENT\" &>/dev/null || brew install \"\\$REQUIREMENT\"",
 			"done\n"
 		]
 	},
