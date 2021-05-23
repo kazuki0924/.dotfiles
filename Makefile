@@ -13,7 +13,7 @@ endif
 all: setup
 
 setup: 
-> git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts_
+> git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts
 > cd ~/.dotscripts
 > make setup
 
