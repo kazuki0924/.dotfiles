@@ -1,5 +1,5 @@
 # general
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/bin/:$PATH"
 export VISUAL="nvim"
 export EDITOR="nvim"
 export PAGER="less -R"
