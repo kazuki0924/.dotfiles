@@ -1,0 +1,145 @@
+{
+  "devices": [
+    [
+      8257,
+      {
+        "*": {
+          "config": {
+            "acceleration": true,
+            "accelerationRate": 50,
+            "commands": [
+              [
+                1,
+                {
+                  "command": "mouse_leftClick",
+                  "params": {}
+                }
+              ],
+              [
+                2,
+                {
+                  "command": "mouse_rightClick",
+                  "params": {}
+                }
+              ],
+              [
+                3,
+                {
+                  "command": "mouse_middleClick",
+                  "params": {
+                    "label": "",
+                    "modifiers": ""
+                  }
+                }
+              ],
+              [
+                4,
+                {
+                  "command": "editing_increaseSize",
+                  "params": {}
+                }
+              ],
+              [
+                8,
+                {
+                  "command": "editing_decreaseSize",
+                  "params": {}
+                }
+              ],
+              [
+                12,
+                {
+                  "command": "navigation_scrollwTrackball",
+                  "params": {
+                    "lines": "2"
+                  }
+                }
+              ],
+              [
+                16,
+                {
+                  "command": "mouse_button5Click",
+                  "params": {}
+                }
+              ],
+              [
+                1073741824,
+                {
+                  "command": "navigation_scrollLeft",
+                  "params": {}
+                }
+              ],
+              [
+                2147483648,
+                {
+                  "command": "navigation_scrollRight",
+                  "params": {}
+                }
+              ]
+            ],
+            "id": 0,
+            "inertialScroll": true,
+            "inertialScrollFactor": 0,
+            "inertialScrollNullSteps": 0,
+            "inertialScrollTimer": 0,
+            "scrollInvert": false,
+            "scrollLines": 11,
+            "slowDivider": 0,
+            "slowModifiers": "alt,cmd",
+            "snapModifiers": "alt,cmd,shift",
+            "snippets": [
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              }
+            ],
+            "speed": 30
+          },
+          "fileName": "",
+          "name": "*"
+        }
+      }
+    ]
+  ],
+  "platform": "darwin",
+  "timestamp": 1621844769,
+  "trayIcon": true,
+  "versionMajor": 2,
+  "versionMinor": 0
+}
