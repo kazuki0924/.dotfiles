@@ -1,5 +1,6 @@
 # general
-export PATH="/usr/local/bin:/usr/local/sbin:/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export VISUAL="nvim"
 export EDITOR="nvim"
 export PAGER="less -R"
