@@ -13,6 +13,8 @@ endif
 all: symlink
 
 symlink:
+> cd ~/.dotfiles
+> git pull
 > [[ ! -d ~/.dotscripts ]] && git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts
 > cd ~/.dotscripts
 > git pull
