@@ -4,13 +4,11 @@ function git_add_commit_push {
   echo git commit -m
   echo Commit Message: "$@"
   echo git push origin HEAD
-  echo git log -n 5
   readonly COMMENT=${@:?"The comment cannot be empty."}
 
   git add .
   git commit -m "$COMMENT"
   git push origin HEAD
-  git log -n 5
 }
 
 alias gacp="git_add_commit_push"
