@@ -1,11 +1,10 @@
-source ~/.config/zsh/p10k.zsh
-source ~/.config/zsh/zinit.zsh
-source ~/.config/zsh/eval.zsh
+__source() {
+  for file in ~/.config/"$1"/*.zsh; do
+    source $file
+  done
+}
 
-for file in ~/.config/zsh/sources/*.zsh; do
-  source $file
-done
-unset file
-
-source ~/.config/zsh/plugins.zsh
-source ~/.config/zsh/env.zsh
+__source "zsh/before"
+__source "zsh"
+__source "zsh/after"
+unset -f __source

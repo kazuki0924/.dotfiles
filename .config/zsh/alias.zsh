@@ -1,5 +1,8 @@
-# basic
+# general
 alias s="source ~/.zshrc"
+
+# dotfiles
+alias dotsync="cd "$HOME/.dotfiles" && make"
 
 # yarn
 alias y="yarn"
