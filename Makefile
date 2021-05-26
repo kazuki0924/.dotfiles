@@ -10,11 +10,12 @@ ifeq ($(origin .RECIPEPREFIX), undefined)
 endif
 .RECIPEPREFIX = >
 
-all: setup
+all: symlink
 
-setup: 
-> git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts
+symlink:
+> [[ ! -d ~/.dotscripts ]] && git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts
 > cd ~/.dotscripts
-> make setup
+> git pull
+> make symlink
 
-.PHONY: setup
+.PHONY: symlink

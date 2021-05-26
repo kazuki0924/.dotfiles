@@ -41,6 +41,13 @@ set termguicolors
 set cmdheight=2
 set colorcolumn=80
 
+
+" copy and paste
+vmap <C-c> "+y
+vmap <C-x> "+c<ESC>
+vmap <C-v> "+ph
+imap <C-v> <ESC>"+phi
+
 " coc
 " https://github.com/neoclide/coc.nvim
 set nowritebackup
@@ -222,6 +229,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'junegunn/vim-easy-align'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'easymotion/vim-easymotion'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
 
@@ -262,6 +271,14 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+" vim-easymotion
+let g:EasyMotion_do_mapping = 0 " Disable default map
+let g:EasyMotion_smartcase = 1 " Turn on case-insensitive feature
+" nmap <Leader> s <Plug>(easymotion-overwin-f2)
+nmap s <Plug>(easymotion-overwin-f2)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " nvim-tree.lua
 let g:nvim_tree_width = 40 "30 by default

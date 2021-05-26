@@ -1,5 +1,5 @@
 # general
-export PATH="/usr/local/bin:/bin/:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/bin:$PATH"
 export VISUAL="nvim"
 export EDITOR="nvim"
 export PAGER="less -R"
@@ -33,7 +33,7 @@ export NNN_OPTS="acdfrwAFH"
 export NNN_TRASH="1"
 export NNN_OPENER="$HOME/.config/nnn/plugins/nuke"
 export NNN_BMS='d:~/.dotfiles;c:~/Repositories/my-cheat-sheet-2021;m:~/Miscellaneous'
-export NNN_PLUG='f:_open .*;s:_bash $nnn;x:_chmod +x $nnn;p:preview-tui-ext;c:fzcd'
+export NNN_PLUG='f:_open .*;x:_chmod +x $nnn;p:preview-tui-ext;c:fzcd'
 export ICONLOOKUP=1
 export GUI=1
 export USE_PISTOL=1

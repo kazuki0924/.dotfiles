@@ -108,3 +108,6 @@ alias gcl="bash $HOME/.dotfiles/scripts/git_config_local.sh"
 
 # PlistBuddy
 alias plb="/usr/libexec/PlistBuddy -c"
+
+# bash
+alias b="bash"
