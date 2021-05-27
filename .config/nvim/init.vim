@@ -1,4 +1,4 @@
-" set runtimepath^=~/.vim runtimepath+=~/.vim/after
+" g set runtimepath^=~/.vim runtimepath+=~/.vim/after
 " let &packpath=&runtimepath
 " source ~/.vimrc
 
@@ -230,7 +230,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'junegunn/vim-easy-align'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'easymotion/vim-easymotion'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
 

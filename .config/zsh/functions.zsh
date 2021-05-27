@@ -188,3 +188,61 @@ alias p="__dircopy"
 function rgd {
   rg --hidden -p "$@" "$HOME/.dotfiles"
 }
+
+
+custom_fuzzy_finder() {
+  local DOT_DIRS=(
+    .dotfiles
+    .dotscripts
+  )
+	local FD_OPTS=(
+		-H
+	)
+  local BASE_DIR="${1-$(pwd)}"
+	local JUMP_TO_DIR="${2-""}"
+	local JUMP_TO_FILE="${3-""}"
+  local IS_FOR_DOTFILES="${4-""}"
+  local IS_FOR_FILE="${5-""}"
+  local IS_FOR_DIR="${6-""}"
+  local IS_CD_BY_FILE="${7-""}"
+  local IS_CD_BY_DIR="${8-""}"
+  local PROGRAM_TO_OPEN_WITH="${9-"nvim"}"
+
+  if [[ $IS_FOR_FILE ]] || [[ $IS_CD_BY_FILE ]] || [[ $JUMP_TO_FILE ]]; then
+    FD_OPTS+=("-t f")
+  elif [[ $IS_FOR_DIR ]] || [[ $JUMP_TO_DIR ]]; then
+    FD_OPTS+=("-t d")
+  fi
+
+	if [[ ! $IS_FOR_DOTFILES = "" ]]; then
+		for DIR in "${DOT_DIRS[@]}"; do
+			FD_OPTS+=("--search-path \"$HOME/$DIR\"")
+		done
+    BASE_DIR=""
+	fi
+
+  if [[ $JUMP_TO_FILE ]]; then
+    FD_OPTS+=("\"$JUMP_TO_FILE\"")
+  elif [[ $JUMP_TO_DIR ]]; then
+    FD_OPTS+=("\"$JUMP_TO_DIR\"")
+  fi
+  
+ 
+  IFS=$' \n\t'
+  FD="fd ${FD_OPTS[*]} $BASE_DIR"
+  IFS=$'\n\t'
+
+  if [[ $JUMP_TO_FILE ]] || [[ $JUMP_TO_DIR ]]; then
+    RESULT=$(eval "$FD" | head -1)
+  else
+    RESULT=$(eval "$FD" | fzy)
+  fi
+	# echo "${FD_OPTS[@]}" "$BASE_DIR" | xargs fd
+  if [[ $IS_CD_BY_DIR ]] ; then
+    cd "$RESULT" || return
+  elif [[ $IS_CD_BY_FILE ]]; then
+    cd "$(dirname "$RESULT")" || return
+  else
+    eval "$PROGRAM_TO_OPEN_WITH $RESULT"
+  fi
+}

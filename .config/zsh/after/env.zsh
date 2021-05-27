@@ -44,5 +44,7 @@ export SPLIT="v"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export BAT_PAGER="less -RFX"
 
-# gmake
-export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
+# gnu
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+export FLAGS_GETOPT_CMD="$(brew --prefix gnu-getopt)/bin/getopt":
