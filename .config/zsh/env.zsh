@@ -1,6 +1,4 @@
 # general
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
 export VISUAL="nvim"
 export EDITOR="nvim"
 export PAGER="less -R"
@@ -48,3 +46,7 @@ export BAT_PAGER="less -RFX"
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 export FLAGS_GETOPT_CMD="$(brew --prefix gnu-getopt)/bin/getopt":
+
+# PATH
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
