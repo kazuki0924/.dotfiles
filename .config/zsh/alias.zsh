@@ -2,7 +2,9 @@
 alias s="source ~/.zshrc"
 
 # dotfiles
-alias dotsync="cd "$HOME/.dotfiles" && make"
+alias dotsync="cd $HOME/.dotfiles && make"
+alias zdf="cd $HOME/.dotfiles && clear && lsd -1 -a"
+alias zds="cd $HOME/.dotscripts && clear && lsd -1 -a"
 
 # yarn
 alias y="yarn"
@@ -39,6 +41,9 @@ alias tka="tmux neww && tmux killw -a && tmux killp -a"
 alias tn="tmux new-session -d && tmux switch-client -n"
 alias tkl="tmux kill-pane -t \$(tmux list-panes | wc -l) && source ~/.zshrc"
 alias tp3="tmux splitw && tmux splitw -h && tmux resizep -t 0 -y \$(expr \$(tmux display -p '#{window_height}') / 3)"
+
+# lsd
+alias l="lsd -1 -a -l"
 
 # exa
 # general use

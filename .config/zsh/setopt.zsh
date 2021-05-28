@@ -2,6 +2,10 @@
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
+# auto cd
+setopt AUTO_CD
+cdpath=(.. ~ ~/src ~/.dotfiles ~/.dotscripts)
+
 # general
 setopt brace_ccl       # Allow Brace Character Class List Expansion.
 setopt combining_chars # Combine Zero-Length Punctuation Characters ( Accents ) With The Base Character.
