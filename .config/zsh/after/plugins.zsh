@@ -39,7 +39,7 @@ __zinit_last_completion_related_plugin() {
 # fast-syntax-highlighting
 # zsh-completions
 # zsh-autosuggestions
-zinit wait"1.5" lucid for \
+zinit wait"2" lucid for \
   atinit"__zinit_last_completion_related_plugin" \
   zdharma/fast-syntax-highlighting \
   blockf \
