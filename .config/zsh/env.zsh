@@ -7,19 +7,7 @@ export LC_CTYPE="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export IFS=$'\n\t'
 
-# also check ~/.config/zsh/eval.zsh
-
-# go / goenv
-export GOENV_ROOT="$HOME/.goenv"
-
-# python / pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-
-# nodejs / fnm
-export PATH="$PATH:$HOME/.fnm"
-
-# rust / cargo
-export PATH="$PATH:$HOME/.cargo/bin"
+# also check ~/.config/zsh/eval.zsh for PATH
 
 # alacritty
 export PATH="$PATH:/Applications/Alacritty.app/Contents/MacOS"
@@ -50,3 +38,6 @@ export FLAGS_GETOPT_CMD="$(brew --prefix gnu-getopt)/bin/getopt":
 # PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+
+# rust / cargo
+export PATH="$PATH:$HOME/.cargo/bin"
