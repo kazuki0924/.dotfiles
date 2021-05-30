@@ -1,19 +1,23 @@
-# Limit lines
+# show hidden
+--hidden
+
+# limit lines
 --max-columns=150
 --max-columns-preview
 
-# Limit counts
+# limit counts
 --max-count=10
 
-# Add types
+# add types
 --type-add
 web:*.{html,css,js}*
 
-# Using glob patterns to include/exclude files or folders
+# using glob patterns to include/exclude files or folders
 --glob=!{git,node_modules,dist}/*
 
-# Set the colors.
+# set the colors.
 --pretty
 
-# Casing
+# casing
 --smart-case
+
