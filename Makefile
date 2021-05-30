@@ -13,13 +13,17 @@ endif
 all: gitpull symlink
 
 gitpull:
-> cd ~/.dotfiles && git pull
-> [[ ! -d ~/.nvimfiles ]] && git clone https://github.com/kazuki0924/.nvimfiles ~/.nvimfiles
-> cd ~/.nvimfiles && git pull
-> [[ ! -d ~/.dotscripts ]] && git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts
-> cd ~/.dotscripts && git pull
+> @ echo git pull .dotfiles, .nvimfiles, .zshfiles, and .dotscripts:
+> @ cd ~/.dotfiles && git pull
+> @ [[ ! -d ~/.nvimfiles ]] && git clone https://github.com/kazuki0924/.nvimfiles ~/.nvimfiles
+> @ cd ~/.nvimfiles && git pull
+> @ [[ ! -d ~/.zshfiles ]] && git clone https://github.com/kazuki0924/.zshfiles ~/.zshfiles
+> @ cd ~/.zshfiles && git pull
+> @ [[ ! -d ~/.dotscripts ]] && git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts
+> @ cd ~/.dotscripts && git pull
+> @ cd
 
 symlink:
-> cd ~/.dotscripts && make symlink
+> @ cd ~/.dotscripts && make symlink
 
 .PHONY: gitpull symlink
