@@ -9,6 +9,9 @@ export IFS=$'\n\t'
 
 # also check ~/.config/zsh/eval.zsh for PATH
 
+# rust / cargo
+export PATH="$PATH:$HOME/.cargo/bin"
+
 # alacritty
 export PATH="$PATH:/Applications/Alacritty.app/Contents/MacOS"
 
@@ -30,6 +33,9 @@ export SPLIT="v"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export BAT_PAGER="less -RFX"
 
+# ripgrep
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 # gnu
 export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
@@ -39,5 +45,3 @@ export FLAGS_GETOPT_CMD="$(brew --prefix gnu-getopt)/bin/getopt":
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 
-# rust / cargo
-export PATH="$PATH:$HOME/.cargo/bin"
