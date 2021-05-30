@@ -10,14 +10,22 @@ ifeq ($(origin .RECIPEPREFIX), undefined)
 endif
 .RECIPEPREFIX = >
 
-all: symlink
+all: gitpull symlink
 
-symlink:
+gitpull:
 > cd ~/.dotfiles
+> git pull
+> [[ ! -d ~/.nvimfiles ]] && git clone https://github.com/kazuki0924/.nvimfiles ~/.nvimfiles
+> cd ~/.nvimfiles
 > git pull
 > [[ ! -d ~/.dotscripts ]] && git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts
 > cd ~/.dotscripts
 > git pull
-> make symlink
+> cd
 
-.PHONY: symlink
+symlink:
+> cd ~/.dotscripts
+> make symlink
+> cd
+
+.PHONY: gitpull symlink
