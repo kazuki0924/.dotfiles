@@ -303,7 +303,7 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Block
+    shape: Underline
 
     # Cursor blinking state
     #
@@ -347,10 +347,13 @@ cursor:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /usr/local/bin/tmux
+  # program: /usr/local/bin/tmux
+  # args:
+  #   - new
+  #   - -A
+  program: /usr/local/bin/zsh
   args:
-    - new
-    - -A
+    - -l
 
 # Startup directory
 #

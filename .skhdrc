@@ -1,0 +1,72 @@
+# open
+meh - b : open -na "Google Chrome"
+meh - m : chrome-cli open "https://www.notion.so" -n
+meh - t : open -na "Alacritty"
+
+# reload
+hyper - p : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+
+# window: focus
+hyper - space : yabai -m window --focus next
+hyper - tab : yabai -m window --focus prev
+hyper - h : yabai -m window --focus west
+hyper - j : yabai -m window --focus south
+hyper - k : yabai -m window --focus north
+hyper - l : yabai -m window --focus east
+
+# window: swap 
+hyper - a : yabai -m window --swap west
+hyper - s : yabai -m window --swap south
+hyper - w : yabai -m window --swap north
+hyper - d : yabai -m window --swap east
+
+# window: warp
+hyper - y : yabai -m window --warp west
+hyper - u : yabai -m window --warp south
+hyper - i : yabai -m window --warp north
+hyper - o : yabai -m window --warp east
+
+# window: set insertion point in focused container
+hyper - left : yabai -m window --insert west
+hyper - down : yabai -m window --insert south
+hyper - up : yabai -m window --insert north
+hyper - right : yabai -m window --insert east
+
+# window: ratio
+hyper - q : yabai -m window --ratio abs:0.50
+hyper - e : yabai -m window --ratio abs:0.35
+
+# window: property
+hyper - n : yabai -m window --toggle zoom-parent
+# window: float / unfloat window and center on screen
+hyper - m : yabai -m window --toggle float; yabai -m window --grid 8:8:1:1:6:6
+
+# window: orientation
+hyper - return : yabai -m space --balance
+hyper - r : yabai -m space --rotate 90
+hyper - t : yabai -m window --toggle split
+hyper - f : yabai -m space --mirror x-axis
+hyper - g : yabai -m space --mirror y-axis
+
+# display: move window to display n, then follow
+hyper - 6 : yabai -m window --display 1; yabai -m display --focus 1
+hyper - 7 : yabai -m window --display 1; yabai -m display --focus 2
+hyper - 8 : yabai -m window --display 1; yabai -m display --focus 3
+hyper - 9 : yabai -m window --display 1; yabai -m display --focus 4
+hyper - 0 : yabai -m window --display 1; yabai -m display --focus 5
+
+# display: focus 
+hyper - 1 : yabai -m display --focus 1
+hyper - 2 : yabai -m display --focus 2
+hyper - 3 : yabai -m display --focus 3
+hyper - 4 : yabai -m display --focus 4
+hyper - 5 : yabai -m display --focus 5
+
+# space: create  / delete / create and focus
+hyper - z : yabai -m space --create; yabai -m space --focus last
+hyper - x : yabai -m space --destroy
+hyper - c : yabai -m space --create; yabai -m window --space last; yabai -m space --focus last
+
+# space: focus
+hyper - v : yabai -m space --focus prev
+hyper - b : yabai -m space --focus next

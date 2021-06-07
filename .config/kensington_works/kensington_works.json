@@ -85,8 +85,8 @@
             "scrollInvert": false,
             "scrollLines": 11,
             "slowDivider": 0,
-            "slowModifiers": "alt,cmd",
-            "snapModifiers": "alt,cmd,shift",
+            "slowModifiers": "",
+            "snapModifiers": "",
             "snippets": [
               {
                 "content": "",
@@ -138,7 +138,7 @@
     ]
   ],
   "platform": "darwin",
-  "timestamp": 1621844769,
+  "timestamp": 1622998310,
   "trayIcon": true,
   "versionMajor": 2,
   "versionMinor": 0
