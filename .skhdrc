@@ -1,6 +1,6 @@
 # open
 meh - b : open -na "Google Chrome"
-meh - m : chrome-cli open "https://www.notion.so" -n
+meh - n : chrome-cli open "https://www.notion.so" -n
 meh - t : open -na "Alacritty"
 
 # reload
@@ -50,10 +50,10 @@ hyper - g : yabai -m space --mirror y-axis
 
 # display: move window to display n, then follow
 hyper - 6 : yabai -m window --display 1; yabai -m display --focus 1
-hyper - 7 : yabai -m window --display 1; yabai -m display --focus 2
-hyper - 8 : yabai -m window --display 1; yabai -m display --focus 3
-hyper - 9 : yabai -m window --display 1; yabai -m display --focus 4
-hyper - 0 : yabai -m window --display 1; yabai -m display --focus 5
+hyper - 7 : yabai -m window --display 2; yabai -m display --focus 2
+hyper - 8 : yabai -m window --display 3; yabai -m display --focus 3
+hyper - 9 : yabai -m window --display 4; yabai -m display --focus 4
+hyper - 0 : yabai -m window --display 5; yabai -m display --focus 5
 
 # display: focus 
 hyper - 1 : yabai -m display --focus 1
