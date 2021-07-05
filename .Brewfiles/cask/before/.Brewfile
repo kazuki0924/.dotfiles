@@ -1,5 +1,4 @@
 cask 'google-chrome'
 cask 'karabiner-elements'
-cask 'rectangle'
 cask 'font-cascadia-code-pl'
 cask 'mysides'
