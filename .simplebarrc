@@ -1,0 +1,86 @@
+{
+  "global": {
+    "theme": "dark",
+    "floatingBar": true,
+    "noBarBg": true,
+    "noColorInData": false,
+    "bottomBar": true,
+    "inlineSpacesOptions": true,
+    "disableNotifications": true,
+    "font": "JetBrains Mono",
+    "yabaiPath": "/usr/local/bin/yabai",
+    "shell": "bash",
+    "slidingAnimationPace": 4,
+    "externalConfigFile": true
+  },
+  "themes": {
+    "lightTheme": "SolarizedLight",
+    "darkTheme": "MacOSDark"
+  },
+  "process": {
+    "displayOnlyCurrent": false
+  },
+  "spacesDisplay": {
+    "exclusions": "",
+    "titleExclusions": "",
+    "exclusionsAsRegex": false,
+    "displayAllSpacesOnAllScreens": true,
+    "hideEmptySpaces": false,
+    "hideSpacesOptions": false
+  },
+  "widgets": {
+    "processWidget": true,
+    "weatherWidget": false,
+    "batteryWidget": true,
+    "wifiWidget": true,
+    "vpnWidget": false,
+    "zoomWidget": true,
+    "soundWidget": true,
+    "micWidget": false,
+    "dateWidget": true,
+    "timeWidget": true,
+    "keyboardWidget": false,
+    "spotifyWidget": false,
+    "musicWidget": true,
+    "browserTrackWidget": true
+  },
+  "weatherWidgetOptions": {
+    "unit": "C",
+    "hideLocation": false,
+    "hideGradient": false,
+    "customLocation": ""
+  },
+  "zoomWidgetOptions": {
+    "showVideo": true,
+    "showMic": true
+  },
+  "batteryWidgetOptions": {
+    "caffeinateOption": "-s"
+  },
+  "networkWidgetOptions": {
+    "networkDevice": "en0",
+    "toggleWifiOnClick": false
+  },
+  "vpnWidgetOptions": {
+    "vpnConnectionName": ""
+  },
+  "timeWidgetOptions": {
+    "hour12": false,
+    "dayProgress": true,
+    "showSeconds": true
+  },
+  "dateWidgetOptions": {
+    "shortDateFormat": false,
+    "locale": "en-US",
+    "calendarApp": ""
+  },
+  "spotifyWidgetOptions": {
+    "showSpecter": true
+  },
+  "musicWidgetOptions": {
+    "showSpecter": true
+  },
+  "browserTrackWidgetOptions": {
+    "showSpecter": true
+  }
+}

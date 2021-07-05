@@ -34,7 +34,7 @@ hyper - right : yabai -m window --insert east
 
 # window: ratio
 hyper - q : yabai -m window --ratio abs:0.50
-hyper - e : yabai -m window --ratio abs:0.35
+hyper - t : yabai -m window --ratio abs:0.35
 
 # window: property
 hyper - n : yabai -m window --toggle zoom-parent
@@ -44,7 +44,7 @@ hyper - m : yabai -m window --toggle float; yabai -m window --grid 8:8:1:1:6:6
 # window: orientation
 hyper - return : yabai -m space --balance
 hyper - r : yabai -m space --rotate 90
-hyper - t : yabai -m window --toggle split
+hyper - e : yabai -m window --toggle split
 hyper - f : yabai -m space --mirror x-axis
 hyper - g : yabai -m space --mirror y-axis
 
