@@ -1,6 +1,5 @@
 cask 'alfred'
 cask 'appcleaner'
-cask 'clipy'
 cask 'displaylink'
 cask 'docker'
 cask 'hammerspoon'
