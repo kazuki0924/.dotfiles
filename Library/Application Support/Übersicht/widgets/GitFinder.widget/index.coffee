@@ -4,7 +4,8 @@
 # https://github.com/atika/Ubersicht-GitFinder
 # Version v0.4
 
-command: "node $HOME/Library/ApplicationSupport/Übersicht/widgets/GitFinder.command/GitFinder.js"
+command: "node $HOME/Library/ApplicationSupport/Übersicht/commands/GitFinder.command/GitFinder.js"
+
 
 refreshFrequency: 15000
 

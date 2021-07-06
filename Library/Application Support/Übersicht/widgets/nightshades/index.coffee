@@ -34,7 +34,7 @@ style: """
     width: 10000px
     height: 10000px
     background-color: black
-    opacity: 0.5
+    opacity: 0.8
     position: absolute
     top: 0px
     left: 0px
@@ -77,7 +77,7 @@ update: (output, domEl) ->
         else
             $('.shade').css({'background-color': 'transparent'})
             $('.shades-icon').attr("src","NightShades.widget/Shadeslight.png")
-            $('.shades-icon').css({'opacity': '0.5'})
+            $('.shades-icon').css({'opacity': '0.8'})
             $('.shades-icon').css({'-webkit-filter': 'drop-shadow(0px 0px 0px rgba(#FFF, 0.0))'})
             $('.shade').addClass( "transparent" )
             console.log("shades off")
