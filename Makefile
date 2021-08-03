@@ -14,16 +14,15 @@ all: gitpull symlink
 
 gitpull:
 > @ echo git pull .dotfiles, .nvimfiles, .vscodefiles, .zshfiles, and .dotscripts:
-> @ cd ~/.dotfiles && git pull
+> @ git -C ~/.dotfiles pull
 > @ [[ ! -d ~/.nvimfiles ]] && git clone https://github.com/kazuki0924/.nvimfiles ~/.nvimfiles
-> @ cd ~/.nvimfiles && git pull
+> @ git -C ~/.nvimfiles pull
 > @ [[ ! -d ~/.vscodefiles ]] && git clone https://github.com/kazuki0924/.vscodefiles ~/.vscodefiles
-> @ cd ~/.vscodefiles && git pull
+> @ git -C ~/.vscodefiles pull
 > @ [[ ! -d ~/.zshfiles ]] && git clone https://github.com/kazuki0924/.zshfiles ~/.zshfiles
-> @ cd ~/.zshfiles && git pull
+> @ git -C ~/.zshfiles pull
 > @ [[ ! -d ~/.dotscripts ]] && git clone https://github.com/kazuki0924/.dotscripts ~/.dotscripts
-> @ cd ~/.dotscripts && git pull
-> @ cd
+> @ git -C ~/.dotscripts pull
 
 symlink:
 > @ cd ~/.dotscripts && make symlink

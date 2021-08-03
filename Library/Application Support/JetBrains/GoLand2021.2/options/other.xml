@@ -1,0 +1,52 @@
+<application>
+  <component name="LangManager">
+    <option name="languageName" value="go" />
+    <languageToProjectMap>
+      <entry key="go" value="$USER_HOME$/Library/Caches/JetBrains/GoLand2021.2/demo/LearnGoProject" />
+    </languageToProjectMap>
+  </component>
+  <component name="NodeJsLocalInterpreters">
+    <local-interpreter path="/usr/local/bin/node" />
+    <local-interpreter path="/var/folders/gs/x0833crx32j24dmp90kby2800000gn/T/fnm_multishells/65099_1627966767266/bin/node" />
+    <local-interpreter path="/var/folders/gs/x0833crx32j24dmp90kby2800000gn/T/fnm_multishells/65379_1627966768305/bin/node" />
+    <local-interpreter path="/usr/local/Cellar/node/16.5.0/bin/node" />
+  </component>
+  <component name="ProjectPluginTrackerManager">
+    <trackers>
+      <map>
+        <entry key="1wCf18usSHM9cpyu4sjwBzphRaV">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+      </map>
+    </trackers>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="EXPORTABILITY_SORTER.file.structure.state" value="true" />
+    <property name="LayoutCode.codeCleanup" value="true" />
+    <property name="LayoutCode.optimizeImports" value="true" />
+    <property name="NonModalCommitCustomization.IsApplied" value="true" />
+    <property name="appcds.runOnSecondStart" value="GO-212.4991-4e95db5704aae25ad846defd83345409cb646153560407493a42f233c553c13e" />
+    <property name="ask.about.ctrl.y.shortcut.v2" value="true" />
+    <property name="evlsprt3.212" value="19" />
+    <property name="experimentalFeature.terminal.shell.command.handling" value="false" />
+    <property name="file.gist.reindex.count" value="1" />
+    <property name="fileTypeChangedCounter" value="1" />
+    <property name="fileTypeDetectors" value="com.intellij.database.vfs.DbStorageFileType$Detector:com.intellij.ide.scratch.ScratchFileServiceImpl$Detector:com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector:org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector" />
+    <property name="go.enabled.exportability.sorter" value="true" />
+    <property name="go.init.cfg.2" value="true" />
+    <property name="go.init.cfg.line.markers" value="true" />
+    <property name="go.libraries.notification.had.been.shown" value="true" />
+    <property name="go.optimizeImportsByDefault" value="true" />
+    <property name="go.suggest.all.rc.was.enabled.once" value="true" />
+    <property name="ide.updates.previous.build.number" value="GO-212.4991" />
+    <property name="log.trace.categories" value="#com.jetbrains.rdserver.requests&#10;#com.jetbrains.rd.ide.document&#10;#com.jetbrains.rdserver.document&#10;#com.jetbrains.rdserver.editors&#10;#com.jetbrains.rdserver.actions&#10;#com.jetbrains.rdserver.permissions" />
+    <property name="registry.to.advanced.settings.migration.build" value="GO-212.4991" />
+    <property name="terminal.shell.command.handling.was.disabled.once" value="true" />
+    <property name="ts.lib.d.ts.version" value="4.3.5" />
+  </component>
+  <component name="ToolbarSettingsService">
+    <option name="NEW_TOOLBAR_SETTINGS" value="OLD_NAVBAR" />
+  </component>
+</application>

@@ -1,0 +1,14 @@
+{
+    "shell_scripts": {
+        "enabled": true
+    },
+    "statistics": {
+        "allow": true
+    },
+    "ui": {
+        "theme": "dark"
+    },
+    "tools": {
+        "update_all_automatically": true
+    }
+}

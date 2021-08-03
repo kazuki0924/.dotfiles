@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # required for Big Sur
 sudo yabai --load-sa

@@ -17,7 +17,7 @@
 		"body": [
 			"#!/usr/bin/env bash",
 			"set -Eeuo pipefail",
-      "IFS=\\$'\\n\\t'\n"
+			"IFS=\\$'\\n\\t'\n"
 		]
 	},
 	"array_for_loop": {
@@ -157,5 +157,18 @@
 	"case": {
 		"prefix": "CASE",
 		"body": "case $${1:VAR} in\n\t${2:1})\n\t\t${3}\n\t\t;;\nesac\n"
+	},
+	"declare": {
+		"prefix": "d",
+		"body": [
+			"declare -r ${1:FOO}",
+		]
+	},
+	"[[ ! -d \"$FOO\"]]": {
+		"prefix": "ifd",
+		"body": [
+			"[[ ! -d \"$${1:FOO}\" ]] && git clone \"$${2:REPO}\" \"$${3:DIST}\"",
+			"$0"
+		]
 	}
 }
