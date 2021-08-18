@@ -26,55 +26,60 @@ local grid = {
   middleTwoThirds = '2,0 8x12',
   fullScreen = '0,0 12x12',
   centeredHuge = '2,1 8x10',
-  centeredBig = '3,2 6x8',
+  centeredBig = '3,2 6x8'
 }
 
 local layoutMetrics = {
-  leftThird = {x=0, y=0, w=0.333, h=1},
-  leftHalf = {x=0, y=0, w=0.5, h=1},
-  rightTwoThirds = {x=0.333, y=0, w=0.667, h=1},
-  rightHalf = {x=0.5, y=0, w=0.5, h=1},
-  middleThird = {x=0.333, y=0, w=0.333, h=1},
-  screenshot1 = {x=1280, y=320, w=1280, h=960}
+  leftThird = {x = 0, y = 0, w = 0.333, h = 1},
+  leftHalf = {x = 0, y = 0, w = 0.5, h = 1},
+  rightTwoThirds = {x = 0.333, y = 0, w = 0.667, h = 1},
+  rightHalf = {x = 0.5, y = 0, w = 0.5, h = 1},
+  middleThird = {x = 0.333, y = 0, w = 0.333, h = 1},
+  screenshot1 = {x = 1280, y = 320, w = 1280, h = 960}
 }
 
 -- predefined layouts
 -- Application name, window title or window object or function
-local layouts = {
-  {
-    key = '1',
-    internal = {
-      {"Google Chrome", nil, "Color LCD", layoutMetrics.leftHalf, nil, nil},
-      {"kitty", "kitty", "Color LCD", layoutMetrics.rightHalf, nil, nil}
-    },
-    ultra = {
-      {"Google Chrome", nil, "LG ULTRAWIDE", layoutMetrics.leftThird, nil, nil},
-      {"kitty", "kitty", "LG ULTRAWIDE", layoutMetrics.rightTwoThirds, nil, nil}
-    }
-  },
-  {
-    key = '2',
-    internal = {
-      {"Google Chrome", nil, "Color LCD", layoutMetrics.leftHalf, nil, nil},
-      {"kitty", "kitty", "Color LCD", layoutMetrics.rightHalf, nil, nil}
-    },
-    ultra = {
-      {"kitty", "vimwiki", "LG ULTRAWIDE", layoutMetrics.middleThird, nil, nil}
-    }
-  },
-  {
-    key = '3',
-    internal = {
-    },
-    ultra = {
-      {"kitty", "vimwiki", "LG ULTRAWIDE", layoutMetrics.screenshot1, nil, nil}
-    },
-    dell = {
-      {"kitty", "vimwiki", "DELL U2715H", layoutMetrics.screenshot1, nil, nil}
-    }
-  }
-}
+-- local layouts = {
+--   {
+--     key = '1',
+--     internal = {
+--       {"Google Chrome", nil, "Color LCD", layoutMetrics.leftHalf, nil, nil},
+--       {"kitty", "kitty", "Color LCD", layoutMetrics.rightHalf, nil, nil}
+--     },
+--     ultra = {
+--       {"Google Chrome", nil, "LG ULTRAWIDE", layoutMetrics.leftThird, nil, nil},
+--       {"kitty", "kitty", "LG ULTRAWIDE", layoutMetrics.rightTwoThirds, nil, nil}
+--     }
+--   },
+--   {
+--     key = '2',
+--     internal = {
+--       {"Google Chrome", nil, "Color LCD", layoutMetrics.leftHalf, nil, nil},
+--       {"kitty", "kitty", "Color LCD", layoutMetrics.rightHalf, nil, nil}
+--     },
+--     ultra = {
+--       {"kitty", "vimwiki", "LG ULTRAWIDE", layoutMetrics.middleThird, nil, nil}
+--     }
+--   },
+--   {
+--     key = '3',
+--     internal = {
+--     },
+--     ultra = {
+--       {"kitty", "vimwiki", "LG ULTRAWIDE", layoutMetrics.screenshot1, nil, nil}
+--     },
+--     dell = {
+--       {"kitty", "vimwiki", "DELL U2715H", layoutMetrics.screenshot1, nil, nil}
+--     }
+--   }
+-- }
 
-hs.fnutils.each(layouts, function(object)
-  hs.hotkey.bind(mash_screen, object.key, function() ext.app.applyLayout(object) end)
+-- hs.fnutils.each(layouts, function(object)
+--   hs.hotkey.bind(mash_screen, object.key, function() ext.app.applyLayout(object) end)
+-- end)
+
+-- disable cmd + H
+hs.hotkey.bind('cmd', 'H', nil, function()
+  hs.eventtap.keyStroke({'alt'}, 'H')
 end)

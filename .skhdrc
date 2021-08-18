@@ -40,6 +40,8 @@ hyper - t : yabai -m window --ratio abs:0.35
 hyper - n : yabai -m window --toggle zoom-parent
 # window: float / unfloat window and center on screen
 hyper - m : yabai -m window --toggle float; yabai -m window --grid 8:8:1:1:6:6
+# window: toggle float
+hyper - f : yabai -m window --toggle float
 
 # window: orientation
 hyper - return : yabai -m space --balance
@@ -62,7 +64,7 @@ hyper - 3 : yabai -m display --focus 3
 hyper - 4 : yabai -m display --focus 4
 hyper - 5 : yabai -m display --focus 5
 
-# space: create  / delete / create and focus
+# space: create / delete / create and focus
 hyper - z : yabai -m space --create; yabai -m space --focus last
 hyper - x : yabai -m space --destroy
 hyper - c : yabai -m space --create; yabai -m window --space last; yabai -m space --focus last

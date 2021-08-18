@@ -3,6 +3,8 @@
     <sdk-url>
       <set>
         <option value="file://$USER_HOME$/.goenv/versions/1.16.3" />
+        <option value="file://$USER_HOME$/go/go1.17rc1" />
+        <option value="file://$USER_HOME$/go/go1.17rc2" />
       </set>
     </sdk-url>
   </component>
