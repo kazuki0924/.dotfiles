@@ -21,7 +21,7 @@ let g:argtextobj_pairs="[:],(:),<:>"
 
 " common settings
 " https://github.com/JetBrains/ideavim/wiki/%22set%22-commands
-set clipboard=unnamed,ideaput
+set clipboard=unnamedplus,unnamed,ideaput
 set ignorecase
 set incsearch
 set number
@@ -127,7 +127,7 @@ vnoremap <leader>ir <Action>(ShowErrorDescription)
 nnoremap <leader>iq <Action>(QuickImplementations)
 vnoremap <leader>iq <Action>(QuickImplementations)
 
-" buffers - tabs, windows, files
+" buffers
 nnoremap <leader>bb <Action>(Switcher)
 vnoremap <leader>bb <Action>(Switcher)
 nnoremap <leader>bx <Action>(CloseEditor)
@@ -151,6 +151,12 @@ vnoremap <leader>bp <Action>(PreviousTab)
 nnoremap <leader>bs <Action>(NewScratchFile)
 vnoremap <leader>bs <Action>(NewScratchFile)
 
+" pane
+nnoremap <leader>ws <Action>(SplitHorizontally)
+nnoremap <leader>wv <Action>(SplitVertically)
+nnoremap <leader>wc <Action>(Unsplit)
+nnoremap <leader>wC <Action>(UnsplitAll)
+
 " git
 nnoremap <leader>vh <Action>(Vcs.ShowTabbedFileHistory)
 nnoremap <leader>vc <Action>(Vcs.Show.Local.Changes)
@@ -164,9 +170,15 @@ nnoremap <leader>ms :source ~/.ideavimrc<cr>
 nnoremap <leader>ma :action
 nnoremap <leader>ml :actionlist
 
-" Don't use Ex mode, use Q for formatting.
-vmap Q gq
-nmap Q gqap
+" don't use Ex mode, use Q for formatting
+nnoremap Q gqap
+vnoremap Q gq
 
-" Load common basic keymaps
+" moving
+nnoremap [e <Action>(MoveLineUp)
+nnoremap ]e <Action>(MoveLineDown)
+nnoremap [s <Action>(MoveStatementUp)
+nnoremap ]s <Action>(MoveStatementDown)
+
+" load common basic keymaps
 source ~/.nvimfiles/vimscripts/keymap/common.vim
