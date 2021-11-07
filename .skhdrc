@@ -42,13 +42,15 @@ hyper - n : yabai -m window --toggle zoom-parent
 hyper - m : yabai -m window --toggle float; yabai -m window --grid 8:8:1:1:6:6
 # window: toggle float
 hyper - f : yabai -m window --toggle float
+# window: toggle topmost
+hyper - g : yabai -m window --toggle topmost
 
 # window: orientation
 hyper - return : yabai -m space --balance
 hyper - r : yabai -m space --rotate 90
 hyper - e : yabai -m window --toggle split
-hyper - f : yabai -m space --mirror x-axis
-hyper - g : yabai -m space --mirror y-axis
+# hyper - , : yabai -m space --mirror x-axis
+# hyper - . : yabai -m space --mirror y-axis
 
 # display: move window to display n, then follow
 hyper - 6 : yabai -m window --display 1; yabai -m display --focus 1
