@@ -1,8 +1,0 @@
-brew 'lsd'
-brew 'mas'
-brew 'readline'
-brew 'shellcheck'
-brew 'tmuxinator'
-brew 'rename'
-brew 'shfmt' 
-brew 'chrome-cli'
