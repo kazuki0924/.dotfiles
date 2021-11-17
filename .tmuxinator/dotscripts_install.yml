@@ -1,0 +1,10 @@
+name: 1
+root: ~/.dotscripts_log
+windows:
+  - editor:
+      layout: even-vertical
+      panes:
+        - ls -G
+        - ls -G
+  - python: log_collector.sh python.sh
+  - logs: tail -f "$(date +"%Y%m%d").log"
