@@ -30,7 +30,6 @@ brew 'luarocks'
 brew 'make'
 brew 'mas'
 brew 'media-info'
-brew 'molovo/revolver/revolver'
 brew 'moreutils'
 brew 'neovim', args: ['HEAD']
 brew 'pyenv', args: ['HEAD']
