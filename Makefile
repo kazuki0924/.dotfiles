@@ -12,12 +12,17 @@ endif
 
 all: setup
 
-setup: symlink
+setup: symlink fonts
 
 .PHONY: setup
 
 symlink:
 > @ ~/.dotscripts/tasks/symlink.sh
 > @ ~/.dotscripts//macos_copy_dotfile_fonts.sh
+
+.PHONY: symlink
+
+fonts:
+> cp ~/.dotfiles/assets/Fonts/* ~/Library/Fonts
 
 .PHONY: symlink
