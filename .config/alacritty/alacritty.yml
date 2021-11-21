@@ -10,19 +10,17 @@
 # to the user's home directory starting with `~/`.
 #import:
 #  - /path/to/alacritty.yml
-
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 #env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
-
+# TERM variable
+#
+# This value is used to set the `$TERM` environment variable for
+# each instance of Alacritty. If it is not present, alacritty will
+# check the local terminfo database and use `alacritty` if it is
+# available, otherwise `xterm-256color` is used.
+#TERM: alacritty
 window:
   # Window dimensions (changes require restart)
   #
@@ -32,7 +30,6 @@ window:
   #dimensions:
   #  columns: 0
   #  lines: 0
-
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
@@ -40,18 +37,16 @@ window:
   #position:
   #  x: 0
   #  y: 0
-
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
     x: 10
-    y: 5
+    y: 20
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
-
   # Window decorations
   #
   # Values for `decorations`:
@@ -61,7 +56,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: transparent
+  decorations: buttonless
 
   # Background opacity
   #
@@ -82,17 +77,14 @@ window:
 
   # Window title
   #title: Alacritty
-
   # Allow terminal applications to change Alacritty's window title.
   dynamic_title: true
-
   # Window class (Linux/BSD only):
   #class:
-    # Application instance name
-    #instance: Alacritty
-    # General application class
-    #general: Alacritty
-
+  # Application instance name
+  #instance: Alacritty
+  # General application class
+  #general: Alacritty
   # GTK theme variant (Linux/BSD only)
   #
   # Override the variant of the GTK theme. Commonly supported values are `dark`
@@ -118,40 +110,33 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     family: MesloLGS NF
-
     # The `style` can be specified to pick a specific face.
     #style: Regular
-
-  # Bold font face
-  #bold:
+    # Bold font face
+    #bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-
     # The `style` can be specified to pick a specific face.
     #style: Bold
-
-  # Italic font face
-  #italic:
+    # Italic font face
+    #italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-
     # The `style` can be specified to pick a specific face.
     #style: Italic
-
-  # Bold italic font face
-  #bold_italic:
+    # Bold italic font face
+    #bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
 
@@ -164,14 +149,12 @@ font:
   #offset:
   #  x: 0
   #  y: 0
-
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
   # right, increasing `y` moves the glyph upward.
   #glyph_offset:
   #  x: 0
   #  y: 0
-
   # Thin stroke font rendering (macOS only)
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
@@ -183,205 +166,133 @@ draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night)
 #colors:
-  # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not
-    # present. If the bright foreground color is not set, or
-    # `draw_bold_text_with_bright_colors` is `false`, the normal foreground
-    # color will be used.
-    #dim_foreground: '#828482'
-    #bright_foreground: '#eaeaea'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor.
-  #
-  # Allowed values are CellForeground/CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Vi mode cursor colors
-  #
-  # Colors for the cursor when the vi mode is active.
-  #
-  # Allowed values are CellForeground/CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #vi_mode_cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Search colors
-  #
-  # Colors used for the search bar and match highlighting.
-  #search:
-    # Allowed values are CellForeground/CellBackground, which reference the
-    # affected cell, or hexadecimal colors like #ff00ff.
-    #matches:
-    #  foreground: '#000000'
-    #  background: '#ffffff'
-    #focused_match:
-    #  foreground: '#ffffff'
-    #  background: '#000000'
-
-    #bar:
-    #  background: '#c5c8c6'
-    #  foreground: '#1d1f21'
-
-  # Keyboard regex hints
-  #hints:
-    # First character in the hint label
-    #
-    # Allowed values are CellForeground/CellBackground, which reference the
-    # affected cell, or hexadecimal colors like #ff00ff.
-    #start:
-    #  foreground: '#1d1f21'
-    #  background: '#e9ff5e'
-
-    # All characters after the first one in the hint label
-    #
-    # Allowed values are CellForeground/CellBackground, which reference the
-    # affected cell, or hexadecimal colors like #ff00ff.
-    #end:
-    #  foreground: '#e9ff5e'
-    #  background: '#1d1f21'
-
-  # Line indicator
-  #
-  # Color used for the indicator displaying the position in history during
-  # search and vi mode.
-  #
-  # By default, these will use the opposing primary color.
-  #line_indicator:
-  #  foreground: None
-  #  background: None
-
-  # Selection colors
-  #
-  # Colors which should be used to draw the selection area.
-  #
-  # Allowed values are CellForeground/CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #selection:
-  #  text: CellBackground
-  #  background: CellForeground
-
-  # Normal colors
-  #normal:
-  #  black:   '#1d1f21'
-  #  red:     '#cc6666'
-  #  green:   '#b5bd68'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
-  #  white:   '#c5c8c6'
-
-  # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
-
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '#131415'
-  #  red:     '#864343'
-  #  green:   '#777c44'
-  #  yellow:  '#9e824c'
-  #  blue:    '#556a7d'
-  #  magenta: '#75617b'
-  #  cyan:    '#5b7d78'
-  #  white:   '#828482'
-
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '#ff00ff' }`
-  #
-  #indexed_colors: []
-
-# Colors (Gruvbox dark)
-colors:
-  primary:
-    background:        &gruvbox_dark_bg '#000000'
-    foreground:        '#fbf1c7'
-    bright_foreground: '#f9f5d7'
-    dim_foreground:    '#f2e5bc'
-  cursor:
-    text:   CellBackground
-    cursor: CellForeground
-  vi_mode_cursor:
-    text:   CellBackground
-    cursor: CellForeground
-  search:
-    matches:
-      foreground: '#000000'
-      background: '#ffffff'
-    focused_match:
-     foreground: CellBackground
-     background: CellForeground
-    bar:
-      background: ''
-      foreground: ''
-  line_indicator:
-    foreground: None
-    background: None
-  selection:
-    text:       CellBackground
-    background: CellForeground
-  bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
-  normal:
-    black:   *gruvbox_dark_bg
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    white:   '#a89984'
-  dim:
-    black:   '#32302f'
-    red:     '#9d0006'
-    green:   '#79740e'
-    yellow:  '#b57614'
-    blue:    '#076678'
-    magenta: '#8f3f71'
-    cyan:    '#427b58'
-    white:   '#928374'
-
-  # Transparent cell backgrounds
-  #
-  # Whether or not `window.opacity` applies to all cell backgrounds or only to
-  # the default background. When set to `true` all cells will be transparent
-  # regardless of their background color.
-  # transparent_background_colors: false
-
+# Default colors
+#primary:
+#  background: '#1d1f21'
+#  foreground: '#c5c8c6'
+# Bright and dim foreground colors
+#
+# The dimmed foreground color is calculated automatically if it is not
+# present. If the bright foreground color is not set, or
+# `draw_bold_text_with_bright_colors` is `false`, the normal foreground
+# color will be used.
+#dim_foreground: '#828482'
+#bright_foreground: '#eaeaea'
+# Cursor colors
+#
+# Colors which should be used to draw the terminal cursor.
+#
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#cursor:
+#  text: CellBackground
+#  cursor: CellForeground
+# Vi mode cursor colors
+#
+# Colors for the cursor when the vi mode is active.
+#
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#vi_mode_cursor:
+#  text: CellBackground
+#  cursor: CellForeground
+# Search colors
+#
+# Colors used for the search bar and match highlighting.
+#search:
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#matches:
+#  foreground: '#000000'
+#  background: '#ffffff'
+#focused_match:
+#  foreground: '#ffffff'
+#  background: '#000000'
+#bar:
+#  background: '#c5c8c6'
+#  foreground: '#1d1f21'
+# Keyboard regex hints
+#hints:
+# First character in the hint label
+#
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#start:
+#  foreground: '#1d1f21'
+#  background: '#e9ff5e'
+# All characters after the first one in the hint label
+#
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#end:
+#  foreground: '#e9ff5e'
+#  background: '#1d1f21'
+# Line indicator
+#
+# Color used for the indicator displaying the position in history during
+# search and vi mode.
+#
+# By default, these will use the opposing primary color.
+#line_indicator:
+#  foreground: None
+#  background: None
+# Selection colors
+#
+# Colors which should be used to draw the selection area.
+#
+# Allowed values are CellForeground/CellBackground, which reference the
+# affected cell, or hexadecimal colors like #ff00ff.
+#selection:
+#  text: CellBackground
+#  background: CellForeground
+# Normal colors
+#normal:
+#  black:   '#1d1f21'
+#  red:     '#cc6666'
+#  green:   '#b5bd68'
+#  yellow:  '#f0c674'
+#  blue:    '#81a2be'
+#  magenta: '#b294bb'
+#  cyan:    '#8abeb7'
+#  white:   '#c5c8c6'
+# Bright colors
+#bright:
+#  black:   '#666666'
+#  red:     '#d54e53'
+#  green:   '#b9ca4a'
+#  yellow:  '#e7c547'
+#  blue:    '#7aa6da'
+#  magenta: '#c397d8'
+#  cyan:    '#70c0b1'
+#  white:   '#eaeaea'
+# Dim colors
+#
+# If the dim colors are not set, they will be calculated automatically based
+# on the `normal` colors.
+#dim:
+#  black:   '#131415'
+#  red:     '#864343'
+#  green:   '#777c44'
+#  yellow:  '#9e824c'
+#  blue:    '#556a7d'
+#  magenta: '#75617b'
+#  cyan:    '#5b7d78'
+#  white:   '#828482'
+# Indexed Colors
+#
+# The indexed colors include all colors from 16 to 256.
+# When these are not set, they're filled with sensible defaults.
+#
+# Example:
+#   `- { index: 16, color: '#ff00ff' }`
+#
+#indexed_colors: []
+# Transparent cell backgrounds
+#
+# Whether or not `window.opacity` applies to all cell backgrounds or only to
+# the default background. When set to `true` all cells will be transparent
+# regardless of their background color.
+# transparent_background_colors: false
 # Bell
 #
 # The bell is rung every time the BEL control character is received.
@@ -457,11 +368,10 @@ cursor:
   # the style of the active value of the normal cursor.
   #
   # See `cursor.style` for available options.
-  vi_mode_style: Blocks
+  vi_mode_style: Block
 
   # Cursor blinking interval in milliseconds.
   #blink_interval: 750
-
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
   unfocused_hollow: true
@@ -497,13 +407,11 @@ shell:
 # Directory the shell is started in. If this is unset, or `None`, the working
 # directory of the parent process will be used.
 #working_directory: None
-
 # Send ESC (\x1b) before characters when alt is pressed.
 alt_send_esc: true
 
 # Offer IPC using `alacritty msg` (unix only)
 #ipc_socket: true
-
 mouse:
   # Click settings
   #
@@ -549,16 +457,16 @@ hints:
   #   - MoveViModeCursor
   #       Move the vi mode cursor to the beginning of the hint.
   enabled:
-   - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
-             [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
-     command: open
-     post_processing: true
-     mouse:
-       enabled: true
-       mods: None
-     binding:
-       key: U
-       mods: Control|Shift
+    - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|g\
+        it:|ssh:|ftp:)[^\0-\x1f-<>\"\\s{-}\\^⟨⟩`]+"
+      command: open
+      post_processing: true
+      mouse:
+        enabled: true
+        mods: None
+      binding:
+        key: U
+        mods: Control|Shift
 
 # Mouse bindings
 #
@@ -591,7 +499,6 @@ hints:
 #mouse_bindings:
 #  - { mouse: Right,             action: ExpandSelection }
 #  - { mouse: Middle, mode: ~Vi, action: PasteSelection  }
-
 # Key bindings
 #
 # Key bindings are specified as a list of objects. For example, this is the
@@ -807,9 +714,13 @@ key_bindings:
   #- { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollPageDown }
   #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop,   }
   #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
-
   # Vi Mode
-  - { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
+  - {
+      key: Space,
+      mods: Shift|Control,
+      mode: ~Search,
+      action: ToggleViMode
+    }
   #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
   #- { key: Escape,                      mode: Vi|~Search, action: ClearSelection          }
   #- { key: I,                           mode: Vi|~Search, action: ToggleViMode            }
@@ -856,7 +767,6 @@ key_bindings:
   #- { key: Slash,  mods: Shift,         mode: Vi|~Search, action: SearchBackward          }
   #- { key: N,                           mode: Vi|~Search, action: SearchNext              }
   #- { key: N,      mods: Shift,         mode: Vi|~Search, action: SearchPrevious          }
-
   # Search Mode
   #- { key: Return,                mode: Search|Vi,  action: SearchConfirm         }
   #- { key: Escape,                mode: Search,     action: SearchCancel          }
@@ -869,7 +779,6 @@ key_bindings:
   #- { key: Down,                  mode: Search,     action: SearchHistoryNext     }
   #- { key: Return,                mode: Search|~Vi, action: SearchFocusNext       }
   #- { key: Return, mods: Shift,   mode: Search|~Vi, action: SearchFocusPrevious   }
-
   # (Windows, Linux, and BSD only)
   #- { key: V,              mods: Control|Shift, mode: ~Vi,        action: Paste            }
   #- { key: C,              mods: Control|Shift,                   action: Copy             }
@@ -883,10 +792,8 @@ key_bindings:
   #- { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
   #- { key: Minus,          mods: Control,                         action: DecreaseFontSize }
   #- { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
-
   # (Windows only)
   #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
-
   # (macOS only)
   #- { key: K,              mods: Command, mode: ~Vi|~Search, chars: "\x0c"                 }
   #- { key: K,              mods: Command, mode: ~Vi|~Search, action: ClearHistory          }
@@ -908,117 +815,162 @@ key_bindings:
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
-
   # readline
-  - { key: Left, mods: Alt, chars: "\x1bb" }
-  - { key: Right, mods: Alt, chars: "\x1bf" }
-  - { key: F, mods: Alt, chars: "\x1bf" }
-  - { key: B, mods: Alt, chars: "\x1bb" }
+  - { key: Left, mods: Alt, chars: "\eb" }
+  - { key: Right, mods: Alt, chars: "\ef" }
+  - { key: F, mods: Alt, chars: "\ef" }
+  - { key: B, mods: Alt, chars: "\eb" }
 
   # fix C-q for tmux
   - { key: Q, mods: Control, chars: "\x11" }
 
+  # tmux
+  - {
+      key: Q,
+      mods: Command,
+      command: { program: '/usr/local/bin/tmux', args: [ 'kill-server' ] }
+    }
+
   # fix A-* for vim
-  - { key: A, mods: Alt, chars: "\x1ba" }
-  - { key: B, mods: Alt, chars: "\x1bb" }
-  - { key: C, mods: Alt, chars: "\x1bc" }
-  - { key: D, mods: Alt, chars: "\x1bd" }
-  - { key: E, mods: Alt, chars: "\x1be" }
-  - { key: F, mods: Alt, chars: "\x1bf" }
-  - { key: G, mods: Alt, chars: "\x1bg" }
-  - { key: H, mods: Alt, chars: "\x1bh" }
-  - { key: I, mods: Alt, chars: "\x1bi" }
-  - { key: J, mods: Alt, chars: "\x1bj" }
-  - { key: K, mods: Alt, chars: "\x1bk" }
-  - { key: L, mods: Alt, chars: "\x1bl" }
-  - { key: M, mods: Alt, chars: "\x1bm" }
-  - { key: N, mods: Alt, chars: "\x1bn" }
-  - { key: O, mods: Alt, chars: "\x1bo" }
-  - { key: P, mods: Alt, chars: "\x1bp" }
-  - { key: R, mods: Alt, chars: "\x1br" }
-  - { key: S, mods: Alt, chars: "\x1bs" }
-  - { key: T, mods: Alt, chars: "\x1bt" }
-  - { key: U, mods: Alt, chars: "\x1bu" }
-  - { key: V, mods: Alt, chars: "\x1bv" }
-  - { key: W, mods: Alt, chars: "\x1bw" }
-  - { key: X, mods: Alt, chars: "\x1bx" }
-  - { key: Y, mods: Alt, chars: "\x1by" }
-  - { key: Z, mods: Alt, chars: "\x1bz" }
-  - { key: Key0, mods: Alt, chars: "\x1b0" }
-  - { key: Key1, mods: Alt, chars: "\x1b1" }
-  - { key: Key2, mods: Alt, chars: "\x1b2" }
-  - { key: Key3, mods: Alt, chars: "\x1b3" }
-  - { key: Key4, mods: Alt, chars: "\x1b4" }
-  - { key: Key5, mods: Alt, chars: "\x1b5" }
-  - { key: Key6, mods: Alt, chars: "\x1b6" }
-  - { key: Key7, mods: Alt, chars: "\x1b7" }
-  - { key: Key8, mods: Alt, chars: "\x1b8" }
-  - { key: Key9, mods: Alt, chars: "\x1b9" }
+  - { key: A, mods: Alt, chars: "\ea" }
+  - { key: B, mods: Alt, chars: "\eb" }
+  - { key: C, mods: Alt, chars: "\ec" }
+  - { key: D, mods: Alt, chars: "\ed" }
+  - { key: E, mods: Alt, chars: "\ee" }
+  - { key: F, mods: Alt, chars: "\ef" }
+  - { key: G, mods: Alt, chars: "\eg" }
+  - { key: H, mods: Alt, chars: "\eh" }
+  - { key: I, mods: Alt, chars: "\ei" }
+  - { key: J, mods: Alt, chars: "\ej" }
+  - { key: K, mods: Alt, chars: "\ek" }
+  - { key: L, mods: Alt, chars: "\el" }
+  - { key: M, mods: Alt, chars: "\em" }
+  - { key: N, mods: Alt, chars: "\en" }
+  - { key: O, mods: Alt, chars: "\eo" }
+  - { key: P, mods: Alt, chars: "\ep" }
+  - { key: R, mods: Alt, chars: "\er" }
+  - { key: S, mods: Alt, chars: "\es" }
+  - { key: T, mods: Alt, chars: "\et" }
+  - { key: U, mods: Alt, chars: "\eu" }
+  - { key: V, mods: Alt, chars: "\ev" }
+  - { key: W, mods: Alt, chars: "\ew" }
+  - { key: X, mods: Alt, chars: "\ex" }
+  - { key: Y, mods: Alt, chars: "\ey" }
+  - { key: Z, mods: Alt, chars: "\ez" }
+  - { key: Key0, mods: Alt, chars: "\e0" }
+  - { key: Key1, mods: Alt, chars: "\e1" }
+  - { key: Key2, mods: Alt, chars: "\e2" }
+  - { key: Key3, mods: Alt, chars: "\e3" }
+  - { key: Key4, mods: Alt, chars: "\e4" }
+  - { key: Key5, mods: Alt, chars: "\e5" }
+  - { key: Key6, mods: Alt, chars: "\e6" }
+  - { key: Key7, mods: Alt, chars: "\e7" }
+  - { key: Key8, mods: Alt, chars: "\e8" }
+  - { key: Key9, mods: Alt, chars: "\e9" }
 
   # iTerm2 like key bindings
   - {
       key: D,
       mods: Command,
-      command: { program: '/usr/local/bin/tmux', args: ['split-window', '-h'] },
+      command:
+        {
+          program: '/usr/local/bin/tmux',
+          args: [ 'split-window', '-h' ]
+        }
     }
   - {
       key: D,
       mods: Command|Shift,
-      command: { program: '/usr/local/bin/tmux', args: ['split-window', '-v'] },
+      command:
+        {
+          program: '/usr/local/bin/tmux',
+          args: [ 'split-window', '-v' ]
+        }
     }
   - {
       key: K,
       mods: Command,
-      command: { program: '/usr/local/bin/tmux', args: ['select-pane', '-U'] },
+      command:
+        {
+          program: '/usr/local/bin/tmux',
+          args: [ 'select-pane', '-U' ]
+        }
     }
   - {
       key: J,
       mods: Command,
-      command: { program: '/usr/local/bin/tmux', args: ['select-pane', '-D'] },
+      command:
+        {
+          program: '/usr/local/bin/tmux',
+          args: [ 'select-pane', '-D' ]
+        }
     }
   - {
       key: H,
       mods: Command,
-      command: { program: '/usr/local/bin/tmux', args: ['select-pane', '-L'] },
+      command:
+        {
+          program: '/usr/local/bin/tmux',
+          args: [ 'select-pane', '-L' ]
+        }
     }
   - {
       key: L,
       mods: Command,
-      command: { program: '/usr/local/bin/tmux', args: ['select-pane', '-R'] },
+      command:
+        {
+          program: '/usr/local/bin/tmux',
+          args: [ 'select-pane', '-R' ]
+        }
     }
   - {
       key: Up,
       mods: Alt|Control,
-      command: { program: '/usr/local/bin/tmux', args: ['resize-pane', '-U', '10'] },
+      command:
+        {
+          program: '/usr/local/bin/tmux',
+          args: [ 'resize-pane', '-U', '10' ]
+        }
     }
   - {
       key: Down,
       mods: Alt|Control,
-      command: { program: '/usr/local/bin/tmux', args: ['resize-pane', '-D', '10'] },
+      command:
+        {
+          program: '/usr/local/bin/tmux',
+          args: [ 'resize-pane', '-D', '10' ]
+        }
     }
   - {
       key: Left,
       mods: Alt|Control,
-      command: { program: '/usr/local/bin/tmux', args: ['resize-pane', '-L', '10'] },
+      command:
+        {
+          program: '/usr/local/bin/tmux',
+          args: [ 'resize-pane', '-L', '10' ]
+        }
     }
   - {
       key: Right,
       mods: Alt|Control,
-      command: { program: '/usr/local/bin/tmux', args: ['resize-pane', '-R', '10'] },
+      command:
+        {
+          program: '/usr/local/bin/tmux',
+          args: [ 'resize-pane', '-R', '10' ]
+        }
     }
   - {
       key: C,
       mods: Command|Shift,
-      command: { program: '/usr/local/bin/tmux', args: ['copy-mode'] },
+      command: { program: '/usr/local/bin/tmux', args: [ 'copy-mode' ] }
     }
 
 debug:
   # Display the time it takes to redraw each frame.
-  render_timer: true
+  render_timer: false
 
   # Keep the log file after quitting Alacritty.
   #persistent_logging: false
-
   # Log level
   #
   # Values for `log_level`:
@@ -1029,6 +981,33 @@ debug:
   #   - Debug
   #   - Trace
   #log_level: Warn
-
   # Print all received window events.
-  print_events: true
+  print_events: false
+
+colors:
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#dddddd'
+
+  # Normal colors
+  normal:
+    black: '#000000'
+    red: '#cc0403'
+    green: '#19cb00'
+    yellow: '#cecb00'
+    blue: '#0d73cc'
+    magenta: '#cb1ed1'
+    cyan: '#0dcdcd'
+    white: '#dddddd'
+
+  # Bright colors
+  bright:
+    black: '#767676'
+    red: '#f2201f'
+    green: '#23fd00'
+    yellow: '#fffd00'
+    blue: '#1a8fff'
+    magenta: '#fd28ff'
+    cyan: '#14ffff'
+    white: '#ffffff'
