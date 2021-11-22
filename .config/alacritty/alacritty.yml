@@ -832,6 +832,11 @@ key_bindings:
       mods: Command,
       command: { program: '/usr/local/bin/tmux', args: [ 'kill-server' ] }
     }
+  - {
+      key: W,
+      mods: Command,
+      command: { program: '/usr/local/bin/bash', args: [ 'tmux kill-server & killall alacritty' ] }
+    }
 
   # fix A-* for vim
   - { key: A, mods: Alt, chars: "\ea" }
