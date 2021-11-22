@@ -1,0 +1,27 @@
+name: 1
+windows:
+  - main:
+      root: ~/.dotscripts_log
+      layout: even-horizontal
+      panes:
+        - ls -alG
+        - tail -f "$(date +"%Y%m%d").log"
+  - brew: log_collector.sh setup_brew.sh && log_collector.sh install_packages_brew_bundle.sh
+  - macos_defaults: macos_defaults.sh
+  - shell: macos_shell.sh
+  - mkdir: macos_mkdir.sh
+  - docutil: macos_dockutil.sh
+  - duti: macos_duti.sh
+  - mysides: macos_mysides.sh
+  - xcode-select: macos_xcode-select.sh
+  - go: setup_goenv.sh && install_packages_go_get.sh
+  - nodejs: setup_fnm.sh && install_packages_npm.sh
+  - python: setup_pyenv.sh && install_packages_pip.sh
+  - cargo: setup_cargo.sh && setup_alacritty.sh
+  - lua: install_packages_luarocks.sh
+  - nnn: setup_nnn.sh
+  - curl: install_packages_curl.sh
+  - git_clone: install_packages_git_clone.sh
+  - manual_downloads: install_packages_manual_downloads.sh
+  - chrome: setup_chrome.sh
+  - fzf: setup_fzf.sh

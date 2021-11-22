@@ -1,0 +1,12 @@
+name: 2
+windows:
+  - main:
+      root: ~/.dotscripts_log
+      layout: even-horizontal
+      panes:
+        - ls -alG
+        - tail -f "$(date +"%Y%m%d").log"
+  - github: setup_github_ssh.sh && setup_git_global_user.sh
+  - wally: setup_moonlander_oryx_wally.sh
+  - ubershicht: setup_ubershicht.sh
+  - yabai: setup_yabai_skhd.sh
