@@ -418,8 +418,8 @@ mouse:
   # The `double_click` and `triple_click` settings control the time
   # alacritty should wait for accepting multiple clicks as one double
   # or triple click.
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
+  # double_click: { threshold: 300 }
+  # triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
   hide_when_typing: true
@@ -464,9 +464,9 @@ hints:
       mouse:
         enabled: true
         mods: None
-      binding:
-        key: U
-        mods: Control|Shift
+      # binding:
+      #   key: U
+      #   mods: Control|Shift
 
 # Mouse bindings
 #
@@ -496,9 +496,11 @@ hints:
 # And optionally:
 #
 # - `mods` (see key bindings)
-#mouse_bindings:
-#  - { mouse: Right,             action: ExpandSelection }
-#  - { mouse: Middle, mode: ~Vi, action: PasteSelection  }
+#
+mouse_bindings:
+  - { mouse: Right,             action: ExpandSelection }
+  - { mouse: Middle, mode: ~Vi, action: PasteSelection  }
+
 # Key bindings
 #
 # Key bindings are specified as a list of objects. For example, this is the
@@ -907,7 +909,7 @@ key_bindings:
     }
   - {
       key: H,
-      mods: Command,
+      mods: Alt,
       command:
         {
           program: '/usr/local/bin/tmux',

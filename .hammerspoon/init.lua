@@ -79,7 +79,7 @@ local layoutMetrics = {
 --   hs.hotkey.bind(mash_screen, object.key, function() ext.app.applyLayout(object) end)
 -- end)
 
--- disable cmd + H
+-- cmd + H becomes alt + H
 hs.hotkey.bind('cmd', 'H', nil, function()
   hs.eventtap.keyStroke({'alt'}, 'H')
 end)
