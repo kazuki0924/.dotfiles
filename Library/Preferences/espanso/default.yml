@@ -1,0 +1,56 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # dotfiles
+  - trigger: ";ds"
+    replace: ".dotscripts"
+  - trigger: ";df"
+    replace: ".dotfiles"
+  - trigger: ";dz"
+    replace: ".zshfiles"
+  - trigger: ";dn"
+    replace: ".nvimfiles"
+  - trigger: ";dv"
+    replace: ".vscodefiles"
+  - trigger: ";dg"
+    replace: ".golandfiles"
+  - trigger: ";sb"
+    replace: ".sandboxfiles"
+  # - trigger: ";dr"
+  #   replace: "https://github.com/kazuki0924"
+
+  # long names
+  - trigger: ";esp"
+    replace: "espanso"
+  - trigger: ";mux"
+    replace: "tmuxinator"
+  - trigger: ";k8"
+    replace: "kubernates"
+  - trigger: ";ala"
+    replace: "alacritty"
+  - trigger: ";hs"
+    replace: "hammerspoon"
+
+  # Dates
+  - trigger: ";date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m-%d-%Y"
+
+  # Shell commands
+  - trigger: ";brds"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "cd ~/.dotscripts && git branch --show-current"
