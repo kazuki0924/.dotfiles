@@ -18,7 +18,6 @@ setup: symlink fonts
 
 symlink:
 > @ ~/.dotscripts/tasks/symlink.sh
-> @ ~/.dotscripts//macos_copy_dotfile_fonts.sh
 
 .PHONY: symlink
 
