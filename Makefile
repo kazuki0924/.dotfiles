@@ -17,7 +17,7 @@ setup: symlink fonts
 .PHONY: setup
 
 symlink:
-> @ ~/.dotscripts/tasks/symlink.sh
+> @ .symlink
 
 .PHONY: symlink
 
