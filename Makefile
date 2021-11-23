@@ -22,6 +22,6 @@ symlink:
 .PHONY: symlink
 
 fonts:
-> cp ~/.dotfiles/assets/Fonts/* ~/Library/Fonts
+> cp -r ~/.dotfiles/assets/Fonts ~/Library/Fonts
 
 .PHONY: symlink

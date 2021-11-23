@@ -908,8 +908,8 @@ key_bindings:
         }
     }
   - {
-      key: H,
-      mods: Alt,
+      # Cmd + H is changed to hit F20 with hammerspoon
+      key: F20,
       command:
         {
           program: '/usr/local/bin/tmux',

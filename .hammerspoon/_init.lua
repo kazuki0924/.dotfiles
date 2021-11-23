@@ -26,3 +26,13 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "T", function()
   }
   hs.layout.apply(windowLayout)
 end)
+
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "N", function()
+  local laptopScreen = "MBP"
+  local windowLayout = {
+      {"Google Chrome",  nil,          laptopScreen, hs.layout.left30,    nil, nil},
+      {"Alacritty",    nil,          laptopScreen, hs.layout.right70,   nil, nil},
+  }
+  hs.layout.apply(windowLayout)
+end)
+

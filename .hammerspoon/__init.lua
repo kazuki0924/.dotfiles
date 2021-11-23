@@ -143,3 +143,5 @@ end
 myWatcher = hs.pathwatcher.new(os.getenv('HOME') .. '/.hammerspoon/',
   reloadConfig):start()
 hs.alert.show('Config loaded')
+
+
