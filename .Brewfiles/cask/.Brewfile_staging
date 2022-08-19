@@ -1,3 +1,4 @@
 cask 'lynx'
 cask 'kitty'
 cask 'dbeaver-community'
+cask 'beekeeper-studios'
