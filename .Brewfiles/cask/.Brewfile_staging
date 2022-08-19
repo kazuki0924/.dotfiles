@@ -1,2 +1,3 @@
 cask 'lynx'
 cask 'kitty'
+cask 'dbeaver-community'
